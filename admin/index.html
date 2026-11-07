@@ -8,6 +8,16 @@
     <link rel="cms-config-url" type="application/json" href="./config.json" />
   </head>
   <body>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+    <script src="./pilot-hooks.js"></script>
+    <script src="./sitewide-hooks.js"></script>
     <script src="https://unpkg.com/@sveltia/cms@0.256.1/dist/sveltia-cms.js"></script>
+    <script>
+      registerPilotHooks(window.CMS);
+      registerSitewideHooks(window.CMS);
+      window.CMS.init();
+    </script>
   </body>
 </html>
