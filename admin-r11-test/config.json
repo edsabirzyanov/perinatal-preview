@@ -1,0 +1,496 @@
+{
+  "backend": {
+    "name": "github",
+    "repo": "edsabirzyanov/perinatal-editorial-content",
+    "branch": "test/r11-direct-20261108"
+  },
+  "media_folder": "media/r11-pilot",
+  "public_folder": "/media/r11-pilot",
+  "publish_mode": "simple",
+  "collections": [
+    {
+      "name": "r11-direct",
+      "label": "R11 — редактирование для тестовой группы",
+      "delete": false,
+      "editor": {
+        "preview": false,
+        "second_pane": false
+      },
+      "files": [
+        {
+          "name": "r11-site-aligned",
+          "label": "Родовое отделение — тексты и фотографии",
+          "file": "content/pilots/r11-site-aligned.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "url",
+              "widget": "hidden"
+            },
+            {
+              "name": "title",
+              "widget": "hidden"
+            },
+            {
+              "name": "state",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "introduction",
+              "label": "Об отделении",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "lines",
+                  "label": "Абзацы раздела (3)",
+                  "widget": "list",
+                  "collapsed": false,
+                  "allow_add": false,
+                  "allow_remove": false,
+                  "allow_duplicate": false,
+                  "allow_reorder": false,
+                  "min": 3,
+                  "max": 3,
+                  "summary": "№ {{fields.number}}: {{fields.text}}",
+                  "fields": [
+                    {
+                      "name": "number",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "text",
+                      "label": "Текст на сайте",
+                      "widget": "text",
+                      "required": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "rooms",
+              "label": "Восемь родзалов",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "lines",
+                  "label": "Абзацы раздела (4)",
+                  "widget": "list",
+                  "collapsed": false,
+                  "allow_add": false,
+                  "allow_remove": false,
+                  "allow_duplicate": false,
+                  "allow_reorder": false,
+                  "min": 4,
+                  "max": 4,
+                  "summary": "№ {{fields.number}}: {{fields.text}}",
+                  "fields": [
+                    {
+                      "name": "number",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "text",
+                      "label": "Текст на сайте",
+                      "widget": "text",
+                      "required": false
+                    }
+                  ]
+                },
+                {
+                  "name": "currentIllustration",
+                  "label": "Сейчас на сайте — родзалы",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "src",
+                      "label": "Текущая иллюстрация",
+                      "widget": "image",
+                      "readonly": true,
+                      "required": false
+                    },
+                    {
+                      "name": "alt",
+                      "label": "Текущее описание",
+                      "widget": "text",
+                      "readonly": true,
+                      "required": false
+                    },
+                    {
+                      "name": "status",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "localAsset",
+                      "widget": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "replacement",
+                  "label": "Заменить изображение — родзалы",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "src",
+                      "label": "Новая иллюстрация или фотография",
+                      "widget": "image",
+                      "required": false,
+                      "choose_url": false,
+                      "accept": "image/png,image/jpeg,image/webp,image/avif"
+                    },
+                    {
+                      "name": "alt",
+                      "label": "Описание изображения (для теста необязательно)",
+                      "widget": "text",
+                      "required": false
+                    },
+                    {
+                      "name": "caption",
+                      "label": "Подпись",
+                      "widget": "text",
+                      "required": false
+                    },
+                    {
+                      "name": "source",
+                      "label": "Источник изображения",
+                      "widget": "text",
+                      "required": false
+                    },
+                    {
+                      "name": "rights",
+                      "label": "Права и согласия",
+                      "widget": "text",
+                      "required": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "care",
+              "label": "Медицинская помощь",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "lines",
+                  "label": "Абзацы раздела (4)",
+                  "widget": "list",
+                  "collapsed": false,
+                  "allow_add": false,
+                  "allow_remove": false,
+                  "allow_duplicate": false,
+                  "allow_reorder": false,
+                  "min": 4,
+                  "max": 4,
+                  "summary": "№ {{fields.number}}: {{fields.text}}",
+                  "fields": [
+                    {
+                      "name": "number",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "text",
+                      "label": "Текст на сайте",
+                      "widget": "text",
+                      "required": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "equipment",
+              "label": "Оснащение и атмосфера",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "lines",
+                  "label": "Абзацы раздела (7)",
+                  "widget": "list",
+                  "collapsed": false,
+                  "allow_add": false,
+                  "allow_remove": false,
+                  "allow_duplicate": false,
+                  "allow_reorder": false,
+                  "min": 7,
+                  "max": 7,
+                  "summary": "№ {{fields.number}}: {{fields.text}}",
+                  "fields": [
+                    {
+                      "name": "number",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "text",
+                      "label": "Текст на сайте",
+                      "widget": "text",
+                      "required": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "leadership",
+              "label": "Руководство и команда",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "lines",
+                  "label": "Абзацы раздела (2)",
+                  "widget": "list",
+                  "collapsed": false,
+                  "allow_add": false,
+                  "allow_remove": false,
+                  "allow_duplicate": false,
+                  "allow_reorder": false,
+                  "min": 2,
+                  "max": 2,
+                  "summary": "№ {{fields.number}}: {{fields.text}}",
+                  "fields": [
+                    {
+                      "name": "number",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "text",
+                      "label": "Текст на сайте",
+                      "widget": "text",
+                      "required": false
+                    }
+                  ]
+                },
+                {
+                  "name": "currentIllustration",
+                  "label": "Сейчас на сайте — команда",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "src",
+                      "label": "Текущая иллюстрация",
+                      "widget": "image",
+                      "readonly": true,
+                      "required": false
+                    },
+                    {
+                      "name": "alt",
+                      "label": "Текущее описание",
+                      "widget": "text",
+                      "readonly": true,
+                      "required": false
+                    },
+                    {
+                      "name": "status",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "localAsset",
+                      "widget": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "replacement",
+                  "label": "Заменить изображение — команда",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "src",
+                      "label": "Новая иллюстрация или фотография",
+                      "widget": "image",
+                      "required": false,
+                      "choose_url": false,
+                      "accept": "image/png,image/jpeg,image/webp,image/avif"
+                    },
+                    {
+                      "name": "alt",
+                      "label": "Описание изображения (для теста необязательно)",
+                      "widget": "text",
+                      "required": false
+                    },
+                    {
+                      "name": "caption",
+                      "label": "Подпись",
+                      "widget": "text",
+                      "required": false
+                    },
+                    {
+                      "name": "source",
+                      "label": "Источник изображения",
+                      "widget": "text",
+                      "required": false
+                    },
+                    {
+                      "name": "rights",
+                      "label": "Права и согласия",
+                      "widget": "text",
+                      "required": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "doctors",
+              "label": "Врачи родового отделения",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "lines",
+                  "label": "Абзацы раздела (8)",
+                  "widget": "list",
+                  "collapsed": false,
+                  "allow_add": false,
+                  "allow_remove": false,
+                  "allow_duplicate": false,
+                  "allow_reorder": false,
+                  "min": 8,
+                  "max": 8,
+                  "summary": "№ {{fields.number}}: {{fields.text}}",
+                  "fields": [
+                    {
+                      "name": "number",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "text",
+                      "label": "Текст на сайте",
+                      "widget": "text",
+                      "required": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "midwives",
+              "label": "Акушерки родового отделения",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "lines",
+                  "label": "Абзацы раздела (10)",
+                  "widget": "list",
+                  "collapsed": false,
+                  "allow_add": false,
+                  "allow_remove": false,
+                  "allow_duplicate": false,
+                  "allow_reorder": false,
+                  "min": 10,
+                  "max": 10,
+                  "summary": "№ {{fields.number}}: {{fields.text}}",
+                  "fields": [
+                    {
+                      "name": "number",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "text",
+                      "label": "Текст на сайте",
+                      "widget": "text",
+                      "required": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "phones",
+              "label": "Телефоны",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "lines",
+                  "label": "Абзацы раздела (6)",
+                  "widget": "list",
+                  "collapsed": false,
+                  "allow_add": false,
+                  "allow_remove": false,
+                  "allow_duplicate": false,
+                  "allow_reorder": false,
+                  "min": 6,
+                  "max": 6,
+                  "summary": "№ {{fields.number}}: {{fields.text}}",
+                  "fields": [
+                    {
+                      "name": "number",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "text",
+                      "label": "Текст на сайте",
+                      "widget": "text",
+                      "required": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "hours",
+              "label": "Передачи, выписка и беседы с родственниками",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "lines",
+                  "label": "Абзацы раздела (9)",
+                  "widget": "list",
+                  "collapsed": false,
+                  "allow_add": false,
+                  "allow_remove": false,
+                  "allow_duplicate": false,
+                  "allow_reorder": false,
+                  "min": 9,
+                  "max": 9,
+                  "summary": "№ {{fields.number}}: {{fields.text}}",
+                  "fields": [
+                    {
+                      "name": "number",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "text",
+                      "label": "Текст на сайте",
+                      "widget": "text",
+                      "required": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "preservedBlankLines",
+              "widget": "hidden"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
