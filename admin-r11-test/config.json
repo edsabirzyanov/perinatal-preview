@@ -491,6 +491,78 @@
           ]
         }
       ]
+    },
+    {
+      "name": "source-texts",
+      "label": "Тексты страниц",
+      "delete": false,
+      "editor": {
+        "preview": false,
+        "second_pane": false
+      },
+      "files": [
+        {
+          "name": "r04",
+          "label": "История ПЦ",
+          "file": "content/sources/history.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "code",
+              "widget": "hidden"
+            },
+            {
+              "name": "documentId",
+              "widget": "hidden"
+            },
+            {
+              "name": "revisionId",
+              "widget": "hidden"
+            },
+            {
+              "name": "tabId",
+              "widget": "hidden"
+            },
+            {
+              "name": "primaryDocumentId",
+              "widget": "hidden"
+            },
+            {
+              "name": "status",
+              "widget": "hidden"
+            },
+            {
+              "name": "lines",
+              "label": "Текст страницы — абзацы по порядку",
+              "widget": "list",
+              "collapsed": false,
+              "allow_add": false,
+              "allow_remove": false,
+              "allow_duplicate": false,
+              "allow_reorder": false,
+              "min": 23,
+              "max": 23,
+              "summary": "№ {{fields.number}}: {{fields.text}}",
+              "fields": [
+                {
+                  "name": "number",
+                  "widget": "hidden"
+                },
+                {
+                  "name": "startIndex",
+                  "widget": "hidden"
+                },
+                {
+                  "name": "text",
+                  "label": "Текст абзаца",
+                  "widget": "text"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
+

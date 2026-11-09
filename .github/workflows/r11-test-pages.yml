@@ -92,19 +92,23 @@ jobs:
         working-directory: source/site/web
         run: npm ci --no-audit --no-fund
 
-      - name: Synchronize pinned R11 content
+      - name: Validate CMS contracts and synchronize the pinned editorial snapshot
         if: steps.revisions.outputs.changed == 'true'
         working-directory: source/site/web
         env:
           GITHUB_TOKEN: ${{ secrets.R11_TEST_READ_TOKEN }}
-          R11_CONTENT_REF: ${{ steps.revisions.outputs.editorial_sha }}
-        run: node scripts/sync-r11-from-github.mjs
+          EDITORIAL_CONTENT_REF: ${{ steps.revisions.outputs.editorial_sha }}
+        run: |
+          node scripts/prepare-test-cms.mjs
+          node scripts/verify-cms-contract.mjs
+          node scripts/sync-editorial-from-github.mjs
 
       - name: Build isolated test site
         if: steps.revisions.outputs.changed == 'true'
         working-directory: source/site/web
         env:
           PUBLIC_EDITORIAL_PREVIEW: 'true'
+          PUBLIC_EDITORIAL_CMS: 'true'
         run: |
           node node_modules/astro/bin/astro.mjs build --config astro.r11-test.config.mjs
           node scripts/verify-test-site.mjs
@@ -224,3 +228,5 @@ jobs:
           if git -C published diff --cached --quiet; then echo 'Test site unchanged'; exit 0; fi
           git -C published commit -m 'Update isolated R11 test site'
           git -C published push origin HEAD:main
+
+
