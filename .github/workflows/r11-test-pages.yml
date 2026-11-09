@@ -1,0 +1,126 @@
+name: R11 test site - manual Pages deploy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout existing published website
+        uses: actions/checkout@v4
+        with:
+          path: published
+          persist-credentials: false
+
+      - name: Check private read-only token
+        env:
+          PRIVATE_READ_TOKEN: ${{ secrets.R11_TEST_READ_TOKEN }}
+        run: |
+          if [ -z "$PRIVATE_READ_TOKEN" ]; then
+            echo "Missing R11_TEST_READ_TOKEN secret. Provide read-only access to both private repositories." >&2
+            exit 1
+          fi
+
+      - name: Checkout current Astro source
+        uses: actions/checkout@v4
+        with:
+          repository: edsabirzyanov/perinatal-site
+          ref: integration/r11-current
+          token: ${{ secrets.R11_TEST_READ_TOKEN }}
+          path: source
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: source/site/web/package-lock.json
+
+      - name: Install dependencies
+        working-directory: source/site/web
+        run: npm ci --no-audit --no-fund
+
+      - name: Sync current R11 texts and images from Sveltia
+        working-directory: source/site/web
+        env:
+          GITHUB_TOKEN: ${{ secrets.R11_TEST_READ_TOKEN }}
+        run: node scripts/sync-r11-from-github.mjs
+
+      - name: Configure isolated Pages base path
+        working-directory: source/site/web
+        shell: bash
+        run: |
+          cat > astro.r11-test.config.mjs <<'EOF'
+          import config from './astro.pages.config.mjs';
+          export default {
+            ...config,
+            base: '/perinatal-preview/r11-test/',
+            outDir: './dist-r11-test/',
+            vite: {
+              ...config.vite,
+              cacheDir: './node_modules/.vite-r11-test',
+            },
+          };
+          EOF
+
+      - name: Build isolated test site
+        working-directory: source/site/web
+        run: npx astro build --config astro.r11-test.config.mjs
+
+      - name: Verify test output
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f source/site/web/dist-r11-test/index.html
+          test -f source/site/web/dist-r11-test/departments/delivery/index.html
+          test -f source/site/web/dist-r11-test/404.html
+          test -f published/index.html
+          test -f published/admin-r11-test/config.json
+          photo=$(node -p "require('./source/site/web/src/data/r11-live.generated.json').photos.rooms.src")
+          if [ -n "$photo" ]; then
+            photo_name=$(basename "$photo" | cut -d. -f1)
+            grep -q "$photo_name" source/site/web/dist-r11-test/departments/delivery/index.html
+          fi
+
+      - name: Assemble published website and test site
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p deploy/r11-test
+          rsync -a --exclude='.git' --exclude='.github' --exclude='r11-test' published/ deploy/
+          cp -a source/site/web/dist-r11-test/. deploy/r11-test/
+          if find deploy -type l | grep -q .; then
+            echo "Symlinks found in Pages artifact" >&2
+            exit 1
+          fi
+          test -f deploy/index.html
+          test -f deploy/admin-r11-test/index.html
+          test -f deploy/r11-test/departments/delivery/index.html
+
+      - name: Upload complete Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: deploy
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy website and isolated R11 test
+        id: deployment
+        uses: actions/deploy-pages@v4
