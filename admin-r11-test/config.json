@@ -2843,6 +2843,1427 @@
           ]
         }
       ]
+    },
+    {
+      "name": "structured-pages",
+      "label": "Главная и каталоги",
+      "delete": false,
+      "editor": {
+        "preview": false,
+        "second_pane": false
+      },
+      "files": [
+        {
+          "name": "r01",
+          "label": "R01 — Главная",
+          "file": "content/editable/r01.json",
+          "format": "json",
+          "output": {
+            "omit_empty_optional_fields": false
+          },
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "sections",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "hero",
+                  "label": "Первый экран",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "location",
+                      "label": "Город",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "subtitle",
+                      "label": "Подзаголовок",
+                      "widget": "text"
+                    },
+                    {
+                      "name": "buttons",
+                      "label": "Кнопки",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "label",
+                          "label": "Подпись ссылки",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "href",
+                          "label": "Адрес ссылки",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    },
+                    {
+                      "name": "topics",
+                      "label": "Направления помощи",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "icon",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "label",
+                          "label": "Подпись ссылки",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "href",
+                          "label": "Адрес ссылки",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    },
+                    {
+                      "name": "image",
+                      "label": "Изображение",
+                      "widget": "object",
+                      "collapsed": false,
+                      "hint": "Текущее изображение: src/assets/homepage/center-flowering-greenery.png; замена сохраняет композицию и редакционные пробелы.",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "src",
+                          "label": "Исходный файл",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        },
+                        {
+                          "name": "alt",
+                          "label": "Описание изображения (alt)",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "replacement",
+                          "label": "Замена изображения",
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "src",
+                              "label": "Файл замены",
+                              "widget": "image",
+                              "required": false,
+                              "media_folder": "/media/structured",
+                              "public_folder": "/media/structured"
+                            },
+                            {
+                              "name": "alt",
+                              "label": "Alt нового изображения",
+                              "widget": "string",
+                              "required": false
+                            },
+                            {
+                              "name": "attribution",
+                              "label": "Источник и право использования",
+                              "widget": "text",
+                              "required": false
+                            },
+                            {
+                              "name": "rightsConfirmed",
+                              "label": "Права на публикацию подтверждены",
+                              "widget": "boolean",
+                              "default": false
+                            }
+                          ]
+                        },
+                        {
+                          "name": "previewUrl",
+                          "label": "Исходное изображение на тестовом сайте",
+                          "widget": "image",
+                          "readonly": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "quickNavigation",
+                  "label": "Быстрая навигация",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "cards",
+                      "label": "Карточки по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 4,
+                      "max": 4,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "icon",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "title",
+                          "label": "Название на сайте",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "detail",
+                          "label": "Описание карточки",
+                          "widget": "text"
+                        },
+                        {
+                          "name": "href",
+                          "label": "Адрес ссылки",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        },
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "practical",
+                  "label": "Контакты и маршрут",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "directionsLabel",
+                      "label": "Подпись маршрута",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "link",
+                      "label": "Ссылка раздела",
+                      "widget": "object",
+                      "collapsed": false,
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "label",
+                          "label": "Подпись ссылки",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "href",
+                          "label": "Адрес ссылки",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    },
+                    {
+                      "name": "image",
+                      "label": "Изображение",
+                      "widget": "object",
+                      "collapsed": false,
+                      "hint": "Текущее изображение: src/assets/homepage/center-entrance.png; замена сохраняет композицию и редакционные пробелы.",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "src",
+                          "label": "Исходный файл",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        },
+                        {
+                          "name": "alt",
+                          "label": "Описание изображения (alt)",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "replacement",
+                          "label": "Замена изображения",
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "src",
+                              "label": "Файл замены",
+                              "widget": "image",
+                              "required": false,
+                              "media_folder": "/media/structured",
+                              "public_folder": "/media/structured"
+                            },
+                            {
+                              "name": "alt",
+                              "label": "Alt нового изображения",
+                              "widget": "string",
+                              "required": false
+                            },
+                            {
+                              "name": "attribution",
+                              "label": "Источник и право использования",
+                              "widget": "text",
+                              "required": false
+                            },
+                            {
+                              "name": "rightsConfirmed",
+                              "label": "Права на публикацию подтверждены",
+                              "widget": "boolean",
+                              "default": false
+                            }
+                          ]
+                        },
+                        {
+                          "name": "previewUrl",
+                          "label": "Исходное изображение на тестовом сайте",
+                          "widget": "image",
+                          "readonly": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "assistance",
+                  "label": "Медицинская помощь",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "cards",
+                      "label": "Карточки по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 4,
+                      "max": 4,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "icon",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "title",
+                          "label": "Название на сайте",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "detail",
+                          "label": "Описание карточки",
+                          "widget": "text"
+                        },
+                        {
+                          "name": "href",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "link",
+                      "label": "Ссылка раздела",
+                      "widget": "object",
+                      "collapsed": false,
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "label",
+                          "label": "Подпись ссылки",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "href",
+                          "label": "Адрес ссылки",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "openDays",
+                  "label": "Дни открытых дверей",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "eyebrow",
+                      "label": "Надзаголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "link",
+                      "label": "Ссылка раздела",
+                      "widget": "object",
+                      "collapsed": false,
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "label",
+                          "label": "Подпись ссылки",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "href",
+                          "label": "Адрес ссылки",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    },
+                    {
+                      "name": "image",
+                      "label": "Изображение",
+                      "widget": "object",
+                      "collapsed": false,
+                      "hint": "Текущее изображение: src/assets/homepage/open-days-illustration.png; замена сохраняет композицию и редакционные пробелы.",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "src",
+                          "label": "Исходный файл",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        },
+                        {
+                          "name": "alt",
+                          "label": "Описание изображения (alt)",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "replacement",
+                          "label": "Замена изображения",
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "src",
+                              "label": "Файл замены",
+                              "widget": "image",
+                              "required": false,
+                              "media_folder": "/media/structured",
+                              "public_folder": "/media/structured"
+                            },
+                            {
+                              "name": "alt",
+                              "label": "Alt нового изображения",
+                              "widget": "string",
+                              "required": false
+                            },
+                            {
+                              "name": "attribution",
+                              "label": "Источник и право использования",
+                              "widget": "text",
+                              "required": false
+                            },
+                            {
+                              "name": "rightsConfirmed",
+                              "label": "Права на публикацию подтверждены",
+                              "widget": "boolean",
+                              "default": false
+                            }
+                          ]
+                        },
+                        {
+                          "name": "previewUrl",
+                          "label": "Исходное изображение на тестовом сайте",
+                          "widget": "image",
+                          "readonly": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "welcome",
+                  "label": "Приветствие",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "name",
+                      "label": "Имя из источника",
+                      "widget": "string",
+                      "readonly": true,
+                      "required": true
+                    },
+                    {
+                      "name": "position",
+                      "label": "Должность из источника",
+                      "widget": "string",
+                      "readonly": true,
+                      "required": true
+                    },
+                    {
+                      "name": "image",
+                      "label": "Изображение",
+                      "widget": "object",
+                      "collapsed": false,
+                      "hint": "Текущее изображение: src/assets/homepage/lesnoy-owner-supplied.png; замена сохраняет композицию и редакционные пробелы.",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "src",
+                          "label": "Исходный файл",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        },
+                        {
+                          "name": "alt",
+                          "label": "Описание изображения (alt)",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "replacement",
+                          "label": "Замена изображения",
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "src",
+                              "label": "Файл замены",
+                              "widget": "image",
+                              "required": false,
+                              "media_folder": "/media/structured",
+                              "public_folder": "/media/structured"
+                            },
+                            {
+                              "name": "alt",
+                              "label": "Alt нового изображения",
+                              "widget": "string",
+                              "required": false
+                            },
+                            {
+                              "name": "attribution",
+                              "label": "Источник и право использования",
+                              "widget": "text",
+                              "required": false
+                            },
+                            {
+                              "name": "rightsConfirmed",
+                              "label": "Права на публикацию подтверждены",
+                              "widget": "boolean",
+                              "default": false
+                            }
+                          ]
+                        },
+                        {
+                          "name": "previewUrl",
+                          "label": "Исходное изображение на тестовом сайте",
+                          "widget": "image",
+                          "readonly": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "preparation",
+                  "label": "Подготовка к родам",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "cards",
+                      "label": "Карточки по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "title",
+                          "label": "Название на сайте",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "url",
+                          "label": "Адрес страницы",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    },
+                    {
+                      "name": "image",
+                      "label": "Изображение",
+                      "widget": "object",
+                      "collapsed": false,
+                      "hint": "Текущее изображение: src/assets/homepage/preparation-illustration.png; замена сохраняет композицию и редакционные пробелы.",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "src",
+                          "label": "Исходный файл",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        },
+                        {
+                          "name": "alt",
+                          "label": "Описание изображения (alt)",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "replacement",
+                          "label": "Замена изображения",
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "src",
+                              "label": "Файл замены",
+                              "widget": "image",
+                              "required": false,
+                              "media_folder": "/media/structured",
+                              "public_folder": "/media/structured"
+                            },
+                            {
+                              "name": "alt",
+                              "label": "Alt нового изображения",
+                              "widget": "string",
+                              "required": false
+                            },
+                            {
+                              "name": "attribution",
+                              "label": "Источник и право использования",
+                              "widget": "text",
+                              "required": false
+                            },
+                            {
+                              "name": "rightsConfirmed",
+                              "label": "Права на публикацию подтверждены",
+                              "widget": "boolean",
+                              "default": false
+                            }
+                          ]
+                        },
+                        {
+                          "name": "previewUrl",
+                          "label": "Исходное изображение на тестовом сайте",
+                          "widget": "image",
+                          "readonly": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "departments",
+                  "label": "Восемь отделений",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "cards",
+                      "label": "Карточки по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 8,
+                      "max": 8,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "title",
+                          "label": "Название на сайте",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "url",
+                          "label": "Адрес страницы",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    },
+                    {
+                      "name": "link",
+                      "label": "Ссылка раздела",
+                      "widget": "object",
+                      "collapsed": false,
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "label",
+                          "label": "Подпись ссылки",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "href",
+                          "label": "Адрес ссылки",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    },
+                    {
+                      "name": "images",
+                      "label": "Изображения по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "src",
+                          "label": "Исходный файл",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        },
+                        {
+                          "name": "alt",
+                          "label": "Описание изображения (alt)",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "replacement",
+                          "label": "Замена изображения",
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "src",
+                              "label": "Файл замены",
+                              "widget": "image",
+                              "required": false,
+                              "media_folder": "/media/structured",
+                              "public_folder": "/media/structured"
+                            },
+                            {
+                              "name": "alt",
+                              "label": "Alt нового изображения",
+                              "widget": "string",
+                              "required": false
+                            },
+                            {
+                              "name": "attribution",
+                              "label": "Источник и право использования",
+                              "widget": "text",
+                              "required": false
+                            },
+                            {
+                              "name": "rightsConfirmed",
+                              "label": "Права на публикацию подтверждены",
+                              "widget": "boolean",
+                              "default": false
+                            }
+                          ]
+                        },
+                        {
+                          "name": "previewUrl",
+                          "label": "Исходное изображение на тестовом сайте",
+                          "widget": "image",
+                          "readonly": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "services",
+                  "label": "Услуги",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "cards",
+                      "label": "Карточки по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 4,
+                      "max": 4,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "title",
+                          "label": "Название на сайте",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "url",
+                          "label": "Адрес страницы",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    },
+                    {
+                      "name": "link",
+                      "label": "Ссылка раздела",
+                      "widget": "object",
+                      "collapsed": false,
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "label",
+                          "label": "Подпись ссылки",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "href",
+                          "label": "Адрес ссылки",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "r08",
+          "label": "R08 — Отделения",
+          "file": "content/editable/r08.json",
+          "format": "json",
+          "output": {
+            "omit_empty_optional_fields": false
+          },
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "sections",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "intro",
+                  "label": "Заголовок страницы",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "eyebrow",
+                      "label": "Надзаголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "buttons",
+                      "label": "Кнопки",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "label",
+                          "label": "Подпись ссылки",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "href",
+                          "label": "Адрес ссылки",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "catalog",
+                  "label": "Каталог отделений",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "cards",
+                      "label": "Карточки по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 8,
+                      "max": 8,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "title",
+                          "label": "Название на сайте",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "url",
+                          "label": "Адрес страницы",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    },
+                    {
+                      "name": "images",
+                      "label": "Изображения по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "src",
+                          "label": "Исходный файл",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        },
+                        {
+                          "name": "alt",
+                          "label": "Описание изображения (alt)",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "replacement",
+                          "label": "Замена изображения",
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "src",
+                              "label": "Файл замены",
+                              "widget": "image",
+                              "required": false,
+                              "media_folder": "/media/structured",
+                              "public_folder": "/media/structured"
+                            },
+                            {
+                              "name": "alt",
+                              "label": "Alt нового изображения",
+                              "widget": "string",
+                              "required": false
+                            },
+                            {
+                              "name": "attribution",
+                              "label": "Источник и право использования",
+                              "widget": "text",
+                              "required": false
+                            },
+                            {
+                              "name": "rightsConfirmed",
+                              "label": "Права на публикацию подтверждены",
+                              "widget": "boolean",
+                              "default": false
+                            }
+                          ]
+                        },
+                        {
+                          "name": "previewUrl",
+                          "label": "Исходное изображение на тестовом сайте",
+                          "widget": "image",
+                          "readonly": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "r17",
+          "label": "R17 — Пациентам",
+          "file": "content/editable/r17.json",
+          "format": "json",
+          "output": {
+            "omit_empty_optional_fields": false
+          },
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "sections",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "intro",
+                  "label": "Заголовок страницы",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "buttons",
+                      "label": "Кнопки",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "label",
+                          "label": "Подпись ссылки",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "href",
+                          "label": "Адрес ссылки",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "groups",
+                  "label": "Группы материалов",
+                  "widget": "list",
+                  "collapsed": false,
+                  "allow_add": false,
+                  "allow_remove": false,
+                  "allow_duplicate": false,
+                  "allow_reorder": false,
+                  "min": 3,
+                  "max": 3,
+                  "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                  "fields": [
+                    {
+                      "name": "id",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "cards",
+                      "label": "Карточки по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "title",
+                          "label": "Название на сайте",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "url",
+                          "label": "Адрес страницы",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "r27",
+          "label": "R27 — Платные услуги",
+          "file": "content/editable/r27.json",
+          "format": "json",
+          "output": {
+            "omit_empty_optional_fields": false
+          },
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "sections",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "intro",
+                  "label": "Заголовок страницы",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    }
+                  ]
+                },
+                {
+                  "name": "price",
+                  "label": "Прайс",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "cards",
+                      "label": "Карточки по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 1,
+                      "max": 1,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "title",
+                          "label": "Название на сайте",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "url",
+                          "label": "Адрес страницы",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "contacts",
+                  "label": "Контактный раздел",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    }
+                  ]
+                },
+                {
+                  "name": "services",
+                  "label": "Услуги",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "heading",
+                      "label": "Заголовок",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "cards",
+                      "label": "Карточки по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 4,
+                      "max": 4,
+                      "summary": "{{fields.title}}{{fields.heading}}{{fields.label}}{{fields.id}}",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "title",
+                          "label": "Название на сайте",
+                          "widget": "string"
+                        },
+                        {
+                          "name": "url",
+                          "label": "Адрес страницы",
+                          "widget": "string",
+                          "readonly": true,
+                          "required": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
