@@ -15,8 +15,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: github-pages
@@ -28,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changed: ${{ steps.revisions.outputs.changed }}
+      preview_sha: ${{ steps.revisions.outputs.preview_sha }}
     steps:
       - name: Check out the current published repository
         uses: actions/checkout@v4
@@ -72,7 +71,7 @@ jobs:
           changed=true
           if [ "$EVENT_NAME" = schedule ]; then
             if curl -fsSL --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' 'https://edsabirzyanov.github.io/perinatal-preview/r11-test/deployment-revisions.json' -o /tmp/r11-deployed.json; then
-              if jq -e --arg s "$source_sha" --arg e "$editorial_sha" --arg p "$preview_sha" '.source == $s and .editorial == $e and .preview == $p' /tmp/r11-deployed.json >/dev/null; then
+              if jq -e --arg s "$source_sha" --arg e "$editorial_sha" '.source == $s and .editorial == $e' /tmp/r11-deployed.json >/dev/null; then
                 changed=false
               fi
             fi
@@ -142,10 +141,11 @@ jobs:
 
       - name: Upload dry-run artifact
         if: steps.revisions.outputs.changed == 'true'
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
-          path: deploy
-          include-hidden-files: true
+          name: r11-test-site
+          path: deploy/r11-test
+          if-no-files-found: error
 
       - name: Verify live preview matches the preserved repository files
         if: steps.revisions.outputs.changed == 'true'
@@ -184,10 +184,42 @@ jobs:
        (github.event_name == 'schedule' && vars.R11_AUTO_DEPLOY == 'true')) &&
       vars.R11_DEPLOY_VERIFIED == 'true'
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy combined website and isolated R11 test
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Require restricted preview write token
+        env:
+          PREVIEW_WRITE_TOKEN: ${{ secrets.R11_PREVIEW_WRITE_TOKEN }}
+        run: |
+          if [ -z "$PREVIEW_WRITE_TOKEN" ]; then
+            echo 'Missing R11_PREVIEW_WRITE_TOKEN: grant contents write access only to perinatal-preview.' >&2
+            exit 1
+          fi
+      - name: Check out preview publishing branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.R11_PREVIEW_WRITE_TOKEN }}
+          path: published
+      - name: Download verified test site
+        uses: actions/download-artifact@v4
+        with:
+          name: r11-test-site
+          path: test-site
+      - name: Commit only the isolated test directory
+        env:
+          EXPECTED_PREVIEW_SHA: ${{ needs.build.outputs.preview_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C published rev-parse HEAD)" = "$EXPECTED_PREVIEW_SHA" || { echo 'Preview changed since verification; retry on the new head.' >&2; exit 1; }
+          test -f test-site/index.html
+          test -f test-site/departments/delivery/index.html
+          if find test-site -type l | grep -q .; then echo 'Symlink in test artifact' >&2; exit 1; fi
+          if [ -L published/r11-test ]; then echo 'Unsafe test directory' >&2; exit 1; fi
+          mkdir -p published/r11-test
+          rsync -a --delete test-site/ published/r11-test/
+          git -C published config user.name 'github-actions[bot]'
+          git -C published config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C published add -- r11-test/
+          if git -C published diff --cached --quiet; then echo 'Test site unchanged'; exit 0; fi
+          git -C published commit -m 'Update isolated R11 test site'
+          git -C published push origin HEAD:main
