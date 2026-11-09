@@ -160,6 +160,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           EXPECTED_PREVIEW_SHA: ${{ steps.revisions.outputs.preview_sha }}
+          WORKFLOW_EVENT: ${{ github.event_name }}
         run: |
           set -euo pipefail
           current=$(gh api repos/edsabirzyanov/perinatal-preview/commits/main --jq .sha)
@@ -168,8 +169,11 @@ jobs:
           const {execFileSync} = require('node:child_process');
           const {readFile} = require('node:fs/promises');
           const paths = execFileSync('git', ['ls-files', '-z']).toString().split('\0').filter(Boolean)
-            .filter(p => !p.startsWith('r11-test/') && !p.split('/').some(part => part.startsWith('.')));
-          if (!paths.includes('index.html') || !paths.includes('admin-r11-test/index.html')) throw Error('Missing preview or CMS');
+            .filter(p => !p.startsWith('r11-test/') && !p.split('/').some(part => part.startsWith('.')))
+            // A workflow/CMS release can precede its native Pages deployment. These
+            // three CMS files are preserved in git and never staged by this deploy.
+            .filter(p => !(process.env.WORKFLOW_EVENT === 'push' && /^admin-r11-test\/(index\.html|config\.json|validate\.js)$/.test(p)));
+          if (!paths.includes('index.html')) throw Error('Missing preview');
           let next = 0;
           async function worker() {
             while (next < paths.length) {
