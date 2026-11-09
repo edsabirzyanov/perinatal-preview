@@ -212,7 +212,7 @@ function aboutDefault(spec) {
   if(Array.isArray(spec))return [];
   if(spec?.nullable)return {state:'null',value:aboutDefault(spec.nullable)};
   if(typeof spec==='object')return Object.fromEntries(Object.entries(spec).map(([k,v])=>[k,aboutDefault(v)]));
-  return spec==='number'?0:spec==='seal'?null:['permission','verification'].includes(spec)?'unknown':'';
+  return spec==='number'?0:spec==='seal'?null:spec==='route'?'not-supplied':['permission','verification'].includes(spec)?'unknown':'';
 }
 function createAboutRecord(route) {
   return {schemaVersion:1,routeId:route.id,adapter:'about-records',sourceSnapshot:{path:route.sourcePath,value:structuredClone(aboutEmpty[route.id])},content:aboutDefault(aboutSpecs[route.id])};

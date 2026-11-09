@@ -4675,43 +4675,139 @@
                                   "widget": "select",
                                   "options": [
                                     {
-                                      "label": "Не указано",
-                                      "value": ""
+                                      "label": "Не указано (null)",
+                                      "value": "not-supplied"
                                     },
-                                    "/",
-                                    "/about/",
-                                    "/about/history/",
-                                    "/about/gallery/",
-                                    "/about/reviews/",
-                                    "/about/documents/",
-                                    "/departments/",
-                                    "/departments/admission/",
-                                    "/departments/pregnancy-pathology/",
-                                    "/departments/delivery/",
-                                    "/departments/postpartum/",
-                                    "/departments/newborn-care/",
-                                    "/departments/maternal-intensive-care/",
-                                    "/departments/neonatal-intensive-care/",
-                                    "/departments/neonatal-pathology/",
-                                    "/patients/",
-                                    "/patients/admission/",
-                                    "/patients/open-days/",
-                                    "/patients/partner-birth/",
-                                    "/patients/doula/",
-                                    "/patients/breastfeeding/",
-                                    "/patients/birth-preparation/",
-                                    "/patients/newborn-gift/",
-                                    "/patients/birth-registration/",
-                                    "/patients/hospital-bag/",
-                                    "/services/",
-                                    "/services/consultations/",
-                                    "/services/contract-birth/",
-                                    "/services/family-rooms/",
-                                    "/services/birth-course/",
-                                    "/services/prices/",
-                                    "/contacts/"
+                                    {
+                                      "label": "/",
+                                      "value": "/"
+                                    },
+                                    {
+                                      "label": "/about/",
+                                      "value": "/about/"
+                                    },
+                                    {
+                                      "label": "/about/history/",
+                                      "value": "/about/history/"
+                                    },
+                                    {
+                                      "label": "/about/gallery/",
+                                      "value": "/about/gallery/"
+                                    },
+                                    {
+                                      "label": "/about/reviews/",
+                                      "value": "/about/reviews/"
+                                    },
+                                    {
+                                      "label": "/about/documents/",
+                                      "value": "/about/documents/"
+                                    },
+                                    {
+                                      "label": "/departments/",
+                                      "value": "/departments/"
+                                    },
+                                    {
+                                      "label": "/departments/admission/",
+                                      "value": "/departments/admission/"
+                                    },
+                                    {
+                                      "label": "/departments/pregnancy-pathology/",
+                                      "value": "/departments/pregnancy-pathology/"
+                                    },
+                                    {
+                                      "label": "/departments/delivery/",
+                                      "value": "/departments/delivery/"
+                                    },
+                                    {
+                                      "label": "/departments/postpartum/",
+                                      "value": "/departments/postpartum/"
+                                    },
+                                    {
+                                      "label": "/departments/newborn-care/",
+                                      "value": "/departments/newborn-care/"
+                                    },
+                                    {
+                                      "label": "/departments/maternal-intensive-care/",
+                                      "value": "/departments/maternal-intensive-care/"
+                                    },
+                                    {
+                                      "label": "/departments/neonatal-intensive-care/",
+                                      "value": "/departments/neonatal-intensive-care/"
+                                    },
+                                    {
+                                      "label": "/departments/neonatal-pathology/",
+                                      "value": "/departments/neonatal-pathology/"
+                                    },
+                                    {
+                                      "label": "/patients/",
+                                      "value": "/patients/"
+                                    },
+                                    {
+                                      "label": "/patients/admission/",
+                                      "value": "/patients/admission/"
+                                    },
+                                    {
+                                      "label": "/patients/open-days/",
+                                      "value": "/patients/open-days/"
+                                    },
+                                    {
+                                      "label": "/patients/partner-birth/",
+                                      "value": "/patients/partner-birth/"
+                                    },
+                                    {
+                                      "label": "/patients/doula/",
+                                      "value": "/patients/doula/"
+                                    },
+                                    {
+                                      "label": "/patients/breastfeeding/",
+                                      "value": "/patients/breastfeeding/"
+                                    },
+                                    {
+                                      "label": "/patients/birth-preparation/",
+                                      "value": "/patients/birth-preparation/"
+                                    },
+                                    {
+                                      "label": "/patients/newborn-gift/",
+                                      "value": "/patients/newborn-gift/"
+                                    },
+                                    {
+                                      "label": "/patients/birth-registration/",
+                                      "value": "/patients/birth-registration/"
+                                    },
+                                    {
+                                      "label": "/patients/hospital-bag/",
+                                      "value": "/patients/hospital-bag/"
+                                    },
+                                    {
+                                      "label": "/services/",
+                                      "value": "/services/"
+                                    },
+                                    {
+                                      "label": "/services/consultations/",
+                                      "value": "/services/consultations/"
+                                    },
+                                    {
+                                      "label": "/services/contract-birth/",
+                                      "value": "/services/contract-birth/"
+                                    },
+                                    {
+                                      "label": "/services/family-rooms/",
+                                      "value": "/services/family-rooms/"
+                                    },
+                                    {
+                                      "label": "/services/birth-course/",
+                                      "value": "/services/birth-course/"
+                                    },
+                                    {
+                                      "label": "/services/prices/",
+                                      "value": "/services/prices/"
+                                    },
+                                    {
+                                      "label": "/contacts/",
+                                      "value": "/contacts/"
+                                    }
                                   ],
-                                  "default": ""
+                                  "default": "not-supplied"
                                 }
                               ],
                               "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
