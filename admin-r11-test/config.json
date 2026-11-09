@@ -502,6 +502,334 @@
       },
       "files": [
         {
+          "name": "r02",
+          "label": "R02 — О перинатальном центре",
+          "file": "content/editable/r02.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "Разделы страницы",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "introduction",
+                  "label": "О центре",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "birth-options",
+                  "label": "Роды по ОМС и контракту",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 5,
+                      "max": 5,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "partner-birth",
+                  "label": "Партнёрские роды",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 8,
+                      "max": 8,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "equipment",
+                  "label": "Оснащение",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 4,
+                      "max": 4,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "intensive-care",
+                  "label": "Интенсивная терапия",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 8,
+                      "max": 8,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "specialists",
+                  "label": "Специалисты",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 6,
+                      "max": 6,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "family-support",
+                  "label": "Поддержка семьи",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 5,
+                      "max": 5,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "conclusion",
+                  "label": "Полезная информация",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 9,
+                      "max": 9,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "r04",
           "label": "История ПЦ",
           "file": "content/sources/history.json",
@@ -555,7 +883,1960 @@
                 {
                   "name": "text",
                   "label": "Текст абзаца",
-                  "widget": "text"
+                  "widget": "text",
+                  "required": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "r09",
+          "label": "R09 — Приемное отделение",
+          "file": "content/editable/r09.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "Разделы страницы",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "introduction",
+                  "label": "Об отделении",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "reception",
+                  "label": "Кого и когда принимают",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 5,
+                      "max": 5,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "inpatient-day-care",
+                  "label": "Стационары",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 4,
+                      "max": 4,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "partner",
+                  "label": "Если вы с партнёром",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 6,
+                      "max": 6,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "birth-admission",
+                  "label": "Оформление на роды",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 14,
+                      "max": 14,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "planned-pathology",
+                  "label": "Плановая госпитализация",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 6,
+                      "max": 6,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "reminders",
+                  "label": "Важно запомнить",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 5,
+                      "max": 5,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "r10",
+          "label": "R10 — Отделения патологии беременных",
+          "file": "content/editable/r10.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "Разделы страницы",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "introduction",
+                  "label": "Об отделении",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 4,
+                      "max": 4,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "conditions",
+                  "label": "Условия пребывания",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 1,
+                      "max": 1,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "care",
+                  "label": "Медицинская помощь",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 4,
+                      "max": 4,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "team",
+                  "label": "Команда отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 8,
+                      "max": 8,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "post",
+                  "label": "Пост отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "hours",
+                  "label": "Часы посещений",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "discharge",
+                  "label": "Выписка",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "r13",
+          "label": "R13 — Отделение физиологии новорожденных",
+          "file": "content/editable/r13.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "Разделы страницы",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "introduction",
+                  "label": "Об отделении",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "functions",
+                  "label": "Задачи отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 10,
+                      "max": 10,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "diagnostics",
+                  "label": "Диагностика",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 8,
+                      "max": 8,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "breastfeeding",
+                  "label": "Грудное вскармливание",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "team",
+                  "label": "Команда отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 5,
+                      "max": 5,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "post",
+                  "label": "Пост отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 4,
+                      "max": 4,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "r14",
+          "label": "R14 — Отделение реанимации беременных, родильниц и рожениц",
+          "file": "content/editable/r14.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "Разделы страницы",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "introduction",
+                  "label": "Об отделении",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "functions",
+                  "label": "Задачи отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 5,
+                      "max": 5,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "care",
+                  "label": "Помощь и оснащение",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 11,
+                      "max": 11,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "normative",
+                  "label": "Руководитель отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 1,
+                      "max": 1,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "team",
+                  "label": "Команда и квалификация",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 7,
+                      "max": 7,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "physicians-room",
+                  "label": "Ординаторская",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "post",
+                  "label": "Пост отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "discussion",
+                  "label": "Беседы с родственниками",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "r15",
+          "label": "R15 — Отделение реанимации и интенсивной терапии новорожденных",
+          "file": "content/editable/r15.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "Разделы страницы",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "introduction",
+                  "label": "Об отделении",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "conditions",
+                  "label": "Состояния и патологии",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 8,
+                      "max": 8,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "care",
+                  "label": "Реанимационная помощь",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 8,
+                      "max": 8,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "equipment",
+                  "label": "Оснащение и наблюдение",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 12,
+                      "max": 12,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "diagnostics",
+                  "label": "Диагностика",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 9,
+                      "max": 9,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "admission",
+                  "label": "Поступление и участие родителей",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "team",
+                  "label": "Команда отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 5,
+                      "max": 5,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "post",
+                  "label": "Пост отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "visits",
+                  "label": "Посещения и беседы",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "r16",
+          "label": "R16 — Отделение патологии новорожденных",
+          "file": "content/editable/r16.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "Разделы страницы",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "introduction",
+                  "label": "Об отделении",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "diagnostics",
+                  "label": "Обследования и диагностика",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 10,
+                      "max": 10,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "support",
+                  "label": "Поддержка семьи",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "team",
+                  "label": "Команда отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 8,
+                      "max": 8,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "physicians-room",
+                  "label": "Ординаторская",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 2,
+                      "max": 2,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "post",
+                  "label": "Пост отделения",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 3,
+                      "max": 3,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "discussion-discharge",
+                  "label": "Беседы и выписка",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "lines",
+                      "label": "Текст раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 1,
+                      "max": 1,
+                      "summary": "№ {{fields.number}}: {{fields.text}}",
+                      "fields": [
+                        {
+                          "name": "number",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "startIndex",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "text",
+                          "label": "Текст на сайте",
+                          "widget": "text",
+                          "required": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "r29",
+          "label": "R29 — Контрактные роды",
+          "file": "content/editable/r29.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "sections",
+              "label": "Разделы страницы",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "consultation",
+                  "label": "Предварительная консультация",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "paragraphs",
+                      "label": "Абзацы раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 1,
+                      "max": 1,
+                      "field": {
+                        "name": "paragraph",
+                        "label": "Текст на сайте",
+                        "widget": "text"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "physiological",
+                  "label": "Физиологические роды — программы",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "paragraphs",
+                      "label": "Абзацы раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 7,
+                      "max": 7,
+                      "field": {
+                        "name": "paragraph",
+                        "label": "Текст на сайте",
+                        "widget": "text"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "cesarean",
+                  "label": "Кесарево сечение — программы",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "paragraphs",
+                      "label": "Абзацы раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 5,
+                      "max": 5,
+                      "field": {
+                        "name": "paragraph",
+                        "label": "Текст на сайте",
+                        "widget": "text"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "conditions",
+                  "label": "Условия пребывания",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "paragraphs",
+                      "label": "Абзацы раздела по порядку",
+                      "widget": "list",
+                      "collapsed": false,
+                      "allow_add": false,
+                      "allow_remove": false,
+                      "allow_duplicate": false,
+                      "allow_reorder": false,
+                      "min": 1,
+                      "max": 1,
+                      "field": {
+                        "name": "paragraph",
+                        "label": "Текст на сайте",
+                        "widget": "text"
+                      }
+                    }
+                  ]
                 }
               ]
             }
@@ -565,4 +2846,3 @@
     }
   ]
 }
-

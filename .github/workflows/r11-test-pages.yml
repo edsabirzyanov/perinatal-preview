@@ -101,6 +101,7 @@ jobs:
         run: |
           node scripts/prepare-test-cms.mjs
           node scripts/verify-cms-contract.mjs
+          npm run check
           node scripts/sync-editorial-from-github.mjs
 
       - name: Build isolated test site
