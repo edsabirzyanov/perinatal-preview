@@ -2880,7 +2880,7 @@
             },
             {
               "name": "sections",
-              "label": "sections",
+              "label": "Разделы страницы",
               "widget": "object",
               "collapsed": false,
               "fields": [
@@ -2932,7 +2932,7 @@
                           "label": "Адрес ссылки",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     },
@@ -2967,7 +2967,7 @@
                           "label": "Адрес ссылки",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     },
@@ -3076,7 +3076,7 @@
                           "label": "Адрес ссылки",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         },
                         {
                           "name": "id",
@@ -3122,7 +3122,7 @@
                           "label": "Адрес ссылки",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     },
@@ -3233,7 +3233,8 @@
                         },
                         {
                           "name": "href",
-                          "widget": "hidden"
+                          "widget": "hidden",
+                          "required": false
                         },
                         {
                           "name": "id",
@@ -3261,7 +3262,7 @@
                           "label": "Адрес ссылки",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     }
@@ -3303,7 +3304,7 @@
                           "label": "Адрес ссылки",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     },
@@ -3504,7 +3505,7 @@
                           "label": "Адрес страницы",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     },
@@ -3613,7 +3614,7 @@
                           "label": "Адрес страницы",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     },
@@ -3637,7 +3638,7 @@
                           "label": "Адрес ссылки",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     },
@@ -3752,7 +3753,7 @@
                           "label": "Адрес страницы",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     },
@@ -3776,7 +3777,7 @@
                           "label": "Адрес ссылки",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     }
@@ -3813,7 +3814,7 @@
             },
             {
               "name": "sections",
-              "label": "sections",
+              "label": "Разделы страницы",
               "widget": "object",
               "collapsed": false,
               "fields": [
@@ -3860,7 +3861,7 @@
                           "label": "Адрес ссылки",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     }
@@ -3904,7 +3905,7 @@
                           "label": "Адрес страницы",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     },
@@ -4012,7 +4013,7 @@
             },
             {
               "name": "sections",
-              "label": "sections",
+              "label": "Разделы страницы",
               "widget": "object",
               "collapsed": false,
               "fields": [
@@ -4054,7 +4055,7 @@
                           "label": "Адрес ссылки",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     }
@@ -4109,7 +4110,7 @@
                           "label": "Адрес страницы",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     }
@@ -4146,7 +4147,7 @@
             },
             {
               "name": "sections",
-              "label": "sections",
+              "label": "Разделы страницы",
               "widget": "object",
               "collapsed": false,
               "fields": [
@@ -4196,7 +4197,7 @@
                           "label": "Адрес страницы",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     }
@@ -4253,7 +4254,7 @@
                           "label": "Адрес страницы",
                           "widget": "string",
                           "readonly": true,
-                          "required": true
+                          "required": false
                         }
                       ]
                     }
