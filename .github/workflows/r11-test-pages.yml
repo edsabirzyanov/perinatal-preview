@@ -1,4 +1,5 @@
 name: R11 test site
+# Workflow changes also run a verified build and update the isolated test site.
 
 on:
   workflow_dispatch:
