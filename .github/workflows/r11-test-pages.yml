@@ -105,7 +105,9 @@ jobs:
         working-directory: source/site/web
         env:
           PUBLIC_EDITORIAL_PREVIEW: 'true'
-        run: node node_modules/astro/bin/astro.mjs build --config astro.r11-test.config.mjs
+        run: |
+          node node_modules/astro/bin/astro.mjs build --config astro.r11-test.config.mjs
+          node scripts/verify-test-site.mjs
 
       - name: Verify and assemble Pages artifact
         if: steps.revisions.outputs.changed == 'true'
