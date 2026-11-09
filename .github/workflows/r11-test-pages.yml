@@ -2,6 +2,11 @@ name: R11 test site - manual Pages deploy
 
 on:
   workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish after successful build (leave off for first test)'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -115,6 +120,7 @@ jobs:
           include-hidden-files: true
 
   deploy:
+    if: ${{ inputs.publish == true }}
     needs: build
     runs-on: ubuntu-latest
     environment:
