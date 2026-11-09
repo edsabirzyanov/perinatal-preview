@@ -2929,9 +2929,7 @@
                         },
                         {
                           "name": "href",
-                          "label": "Адрес ссылки",
-                          "widget": "string",
-                          "readonly": true,
+                          "widget": "hidden",
                           "required": false
                         }
                       ]
@@ -2964,9 +2962,7 @@
                         },
                         {
                           "name": "href",
-                          "label": "Адрес ссылки",
-                          "widget": "string",
-                          "readonly": true,
+                          "widget": "hidden",
                           "required": false
                         }
                       ]
@@ -3073,9 +3069,7 @@
                         },
                         {
                           "name": "href",
-                          "label": "Адрес ссылки",
-                          "widget": "string",
-                          "readonly": true,
+                          "widget": "hidden",
                           "required": false
                         },
                         {
@@ -3119,9 +3113,7 @@
                         },
                         {
                           "name": "href",
-                          "label": "Адрес ссылки",
-                          "widget": "string",
-                          "readonly": true,
+                          "widget": "hidden",
                           "required": false
                         }
                       ]
@@ -3259,9 +3251,7 @@
                         },
                         {
                           "name": "href",
-                          "label": "Адрес ссылки",
-                          "widget": "string",
-                          "readonly": true,
+                          "widget": "hidden",
                           "required": false
                         }
                       ]
@@ -3301,9 +3291,7 @@
                         },
                         {
                           "name": "href",
-                          "label": "Адрес ссылки",
-                          "widget": "string",
-                          "readonly": true,
+                          "widget": "hidden",
                           "required": false
                         }
                       ]
@@ -3635,9 +3623,7 @@
                         },
                         {
                           "name": "href",
-                          "label": "Адрес ссылки",
-                          "widget": "string",
-                          "readonly": true,
+                          "widget": "hidden",
                           "required": false
                         }
                       ]
@@ -3774,9 +3760,7 @@
                         },
                         {
                           "name": "href",
-                          "label": "Адрес ссылки",
-                          "widget": "string",
-                          "readonly": true,
+                          "widget": "hidden",
                           "required": false
                         }
                       ]
@@ -3858,9 +3842,7 @@
                         },
                         {
                           "name": "href",
-                          "label": "Адрес ссылки",
-                          "widget": "string",
-                          "readonly": true,
+                          "widget": "hidden",
                           "required": false
                         }
                       ]
@@ -4052,9 +4034,7 @@
                         },
                         {
                           "name": "href",
-                          "label": "Адрес ссылки",
-                          "widget": "string",
-                          "readonly": true,
+                          "widget": "hidden",
                           "required": false
                         }
                       ]
