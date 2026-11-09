@@ -9,6 +9,9 @@ on:
         default: false
   schedule:
     - cron: '*/15 * * * *'
+  push:
+    branches: [main]
+    paths: ['.github/workflows/r11-test-pages.yml']
 
 permissions:
   contents: read
