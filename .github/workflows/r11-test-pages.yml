@@ -1,12 +1,14 @@
-name: R11 test site - manual Pages deploy
+name: R11 test site
 
 on:
   workflow_dispatch:
     inputs:
       publish:
-        description: 'Publish after successful build (leave off for first test)'
+        description: Publish after a successful dry run and Pages verification
         type: boolean
         default: false
+  schedule:
+    - cron: '*/15 * * * *'
 
 permissions:
   contents: read
@@ -19,24 +21,27 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name != 'schedule' || vars.R11_AUTO_DEPLOY == 'true'
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.revisions.outputs.changed }}
     steps:
-      - name: Checkout existing published website
+      - name: Check out the current published repository
         uses: actions/checkout@v4
         with:
           path: published
           persist-credentials: false
 
-      - name: Check private read-only token
+      - name: Require private read-only access
         env:
           PRIVATE_READ_TOKEN: ${{ secrets.R11_TEST_READ_TOKEN }}
         run: |
           if [ -z "$PRIVATE_READ_TOKEN" ]; then
-            echo "Missing R11_TEST_READ_TOKEN secret. Provide read-only access to both private repositories." >&2
+            echo 'Missing R11_TEST_READ_TOKEN: grant contents read access to both private repositories.' >&2
             exit 1
           fi
 
-      - name: Checkout current Astro source
+      - name: Check out integration source
         uses: actions/checkout@v4
         with:
           repository: edsabirzyanov/perinatal-site
@@ -45,7 +50,35 @@ jobs:
           path: source
           persist-credentials: false
 
+      - name: Resolve immutable revisions and detect changes
+        id: revisions
+        env:
+          GH_TOKEN: ${{ secrets.R11_TEST_READ_TOKEN }}
+          EVENT_NAME: ${{ github.event_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_sha=$(git -C source rev-parse HEAD)
+          preview_sha=$(git -C published rev-parse HEAD)
+          editorial_sha=$(gh api 'repos/edsabirzyanov/perinatal-editorial-content/commits/test%2Fr11-direct-20261108' --jq .sha)
+          [[ "$editorial_sha" =~ ^[0-9a-f]{40}$ ]]
+          echo "source_sha=$source_sha" >> "$GITHUB_OUTPUT"
+          echo "editorial_sha=$editorial_sha" >> "$GITHUB_OUTPUT"
+          echo "preview_sha=$preview_sha" >> "$GITHUB_OUTPUT"
+          echo "Source: $source_sha; editorial: $editorial_sha; preview: $preview_sha"
+          changed=true
+          if [ "$EVENT_NAME" = schedule ]; then
+            if curl -fsSL --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' 'https://edsabirzyanov.github.io/perinatal-preview/r11-test/deployment-revisions.json' -o /tmp/r11-deployed.json; then
+              if jq -e --arg s "$source_sha" --arg e "$editorial_sha" --arg p "$preview_sha" '.source == $s and .editorial == $e and .preview == $p' /tmp/r11-deployed.json >/dev/null; then
+                changed=false
+              fi
+            fi
+          fi
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          echo "Build required: $changed"
+
       - name: Set up Node.js
+        if: steps.revisions.outputs.changed == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -53,37 +86,31 @@ jobs:
           cache-dependency-path: source/site/web/package-lock.json
 
       - name: Install dependencies
+        if: steps.revisions.outputs.changed == 'true'
         working-directory: source/site/web
         run: npm ci --no-audit --no-fund
 
-      - name: Sync current R11 texts and images from Sveltia
+      - name: Synchronize pinned R11 content
+        if: steps.revisions.outputs.changed == 'true'
         working-directory: source/site/web
         env:
           GITHUB_TOKEN: ${{ secrets.R11_TEST_READ_TOKEN }}
+          R11_CONTENT_REF: ${{ steps.revisions.outputs.editorial_sha }}
         run: node scripts/sync-r11-from-github.mjs
 
-      - name: Configure isolated Pages base path
-        working-directory: source/site/web
-        shell: bash
-        run: |
-          cat > astro.r11-test.config.mjs <<'EOF'
-          import config from './astro.pages.config.mjs';
-          export default {
-            ...config,
-            base: '/perinatal-preview/r11-test/',
-            outDir: './dist-r11-test/',
-            vite: {
-              ...config.vite,
-              cacheDir: './node_modules/.vite-r11-test',
-            },
-          };
-          EOF
-
       - name: Build isolated test site
+        if: steps.revisions.outputs.changed == 'true'
         working-directory: source/site/web
-        run: npx astro build --config astro.r11-test.config.mjs
+        env:
+          PUBLIC_EDITORIAL_PREVIEW: 'true'
+        run: node node_modules/astro/bin/astro.mjs build --config astro.r11-test.config.mjs
 
-      - name: Verify test output
+      - name: Verify and assemble Pages artifact
+        if: steps.revisions.outputs.changed == 'true'
+        env:
+          SOURCE_SHA: ${{ steps.revisions.outputs.source_sha }}
+          EDITORIAL_SHA: ${{ steps.revisions.outputs.editorial_sha }}
+          PREVIEW_SHA: ${{ steps.revisions.outputs.preview_sha }}
         shell: bash
         run: |
           set -euo pipefail
@@ -92,41 +119,72 @@ jobs:
           test -f source/site/web/dist-r11-test/404.html
           test -f published/index.html
           test -f published/admin-r11-test/config.json
+          grep -q 'noindex, nofollow' source/site/web/dist-r11-test/index.html
+          grep -q '/perinatal-preview/r11-test/_astro/' source/site/web/dist-r11-test/index.html
           photo=$(node -p "require('./source/site/web/src/data/r11-live.generated.json').photos.rooms.src")
           if [ -n "$photo" ]; then
             photo_name=$(basename "$photo" | cut -d. -f1)
             grep -q "$photo_name" source/site/web/dist-r11-test/departments/delivery/index.html
           fi
-
-      - name: Assemble published website and test site
-        shell: bash
-        run: |
-          set -euo pipefail
           mkdir -p deploy/r11-test
           rsync -a --exclude='.git' --exclude='.github' --exclude='r11-test' published/ deploy/
           cp -a source/site/web/dist-r11-test/. deploy/r11-test/
-          if find deploy -type l | grep -q .; then
-            echo "Symlinks found in Pages artifact" >&2
-            exit 1
-          fi
-          test -f deploy/index.html
+          # The public test contains active pages only, as in the existing preview.
+          rm -rf deploy/r11-test/example-components deploy/r11-test/style-guide
+          rm -f deploy/r11-test/robots.txt deploy/r11-test/sitemap*.xml
+          jq -n --arg s "$SOURCE_SHA" --arg e "$EDITORIAL_SHA" --arg p "$PREVIEW_SHA" '{source:$s,editorial:$e,preview:$p}' > deploy/r11-test/deployment-revisions.json
+          if find deploy -type l | grep -q .; then echo 'Symlink in artifact' >&2; exit 1; fi
           test -f deploy/admin-r11-test/index.html
           test -f deploy/r11-test/departments/delivery/index.html
 
-      - name: Upload complete Pages artifact
+      - name: Upload dry-run artifact
+        if: steps.revisions.outputs.changed == 'true'
         uses: actions/upload-pages-artifact@v4
         with:
           path: deploy
           include-hidden-files: true
 
+      - name: Verify live preview matches the preserved repository files
+        if: steps.revisions.outputs.changed == 'true'
+        working-directory: published
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_PREVIEW_SHA: ${{ steps.revisions.outputs.preview_sha }}
+        run: |
+          set -euo pipefail
+          current=$(gh api repos/edsabirzyanov/perinatal-preview/commits/main --jq .sha)
+          test "$current" = "$EXPECTED_PREVIEW_SHA" || { echo 'Preview main changed during the build.' >&2; exit 1; }
+          node <<'NODE'
+          const {execFileSync} = require('node:child_process');
+          const {readFile} = require('node:fs/promises');
+          const paths = execFileSync('git', ['ls-files', '-z']).toString().split('\0').filter(Boolean)
+            .filter(p => !p.startsWith('r11-test/') && !p.split('/').some(part => part.startsWith('.')));
+          if (!paths.includes('index.html') || !paths.includes('admin-r11-test/index.html')) throw Error('Missing preview or CMS');
+          let next = 0;
+          async function worker() {
+            while (next < paths.length) {
+              const path = paths[next++];
+              const url = 'https://edsabirzyanov.github.io/perinatal-preview/' + path.split('/').map(encodeURIComponent).join('/');
+              const response = await fetch(url, {headers:{'Cache-Control':'no-cache'},signal:AbortSignal.timeout(30000)});
+              if (!response.ok || !Buffer.from(await response.arrayBuffer()).equals(await readFile(path))) throw Error(`Live preview differs: ${path} (HTTP ${response.status})`);
+            }
+          }
+          Promise.all(Array.from({length:8}, worker)).then(() => console.log(`Preserved ${paths.length} live files`)).catch(e => {console.error(e.message); process.exitCode=1;});
+          NODE
+
   deploy:
-    if: ${{ inputs.publish == true }}
     needs: build
+    if: >-
+      needs.build.outputs.changed == 'true' &&
+      ((github.event_name == 'workflow_dispatch' && inputs.publish == true) ||
+       (github.event_name == 'schedule' && vars.R11_AUTO_DEPLOY == 'true')) &&
+      vars.R11_DEPLOY_VERIFIED == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy website and isolated R11 test
+      - name: Deploy combined website and isolated R11 test
         id: deployment
         uses: actions/deploy-pages@v4
