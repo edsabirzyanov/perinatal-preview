@@ -1,4 +1,5 @@
 name: R11 test site
+# Structured CMS Stage 1 asset registry checkpoint: 996d5f794858e41e5ad6c19d8d6bdc824621db63
 # Workflow changes also run a verified build and update the isolated test site.
 
 on:
