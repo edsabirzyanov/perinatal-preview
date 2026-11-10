@@ -21,6 +21,7 @@ on:
 
 permissions:
   contents: read
+  actions: write
 
 concurrency:
   group: github-pages
@@ -32,6 +33,8 @@ jobs:
     outputs:
       changed: ${{ steps.revisions.outputs.changed }}
       preview_sha: ${{ steps.revisions.outputs.preview_sha }}
+      source_sha: ${{ steps.revisions.outputs.source_sha }}
+      editorial_sha: ${{ steps.revisions.outputs.editorial_sha }}
     steps:
       - name: Check out the current published repository
         uses: actions/checkout@v4
@@ -49,11 +52,11 @@ jobs:
             exit 1
           fi
 
-      - name: Check out integration source
+      - name: Check out canonical source
         uses: actions/checkout@v4
         with:
           repository: edsabirzyanov/perinatal-site
-          ref: integration/r11-current
+          ref: master
           token: ${{ secrets.R11_TEST_READ_TOKEN }}
           path: source
           persist-credentials: false
@@ -68,18 +71,16 @@ jobs:
           set -euo pipefail
           source_sha=$(git -C source rev-parse HEAD)
           preview_sha=$(git -C published rev-parse HEAD)
-          editorial_sha=$(gh api 'repos/edsabirzyanov/perinatal-editorial-content/commits/test%2Fr11-direct-20261108' --jq .sha)
+          editorial_sha=$(gh api 'repos/edsabirzyanov/perinatal-editorial-content/commits/main' --jq .sha)
           [[ "$editorial_sha" =~ ^[0-9a-f]{40}$ ]]
           echo "source_sha=$source_sha" >> "$GITHUB_OUTPUT"
           echo "editorial_sha=$editorial_sha" >> "$GITHUB_OUTPUT"
           echo "preview_sha=$preview_sha" >> "$GITHUB_OUTPUT"
           echo "Source: $source_sha; editorial: $editorial_sha; preview: $preview_sha"
           changed=true
-          if [ "$EVENT_NAME" = schedule ]; then
-            if curl -fsSL --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache' 'https://edsabirzyanov.github.io/perinatal-preview/r11-test/deployment-revisions.json' -o /tmp/r11-deployed.json; then
-              if jq -e --arg s "$source_sha" --arg e "$editorial_sha" '.source == $s and .editorial == $e' /tmp/r11-deployed.json >/dev/null; then
-                changed=false
-              fi
+          if [ "${{ inputs.acceptance }}" != true ] && [ -f published/r11-test/deployment-revisions.json ]; then
+            if jq -e --arg s "$source_sha" --arg e "$editorial_sha" '.source == $s and .editorial == $e' published/r11-test/deployment-revisions.json >/dev/null; then
+              changed=false
             fi
           fi
           echo "changed=$changed" >> "$GITHUB_OUTPUT"
@@ -255,9 +256,20 @@ jobs:
       - name: Commit only the isolated test directory
         env:
           EXPECTED_PREVIEW_SHA: ${{ needs.build.outputs.preview_sha }}
+          EXPECTED_SOURCE_SHA: ${{ needs.build.outputs.source_sha }}
+          EXPECTED_EDITORIAL_SHA: ${{ needs.build.outputs.editorial_sha }}
+          GH_TOKEN: ${{ secrets.R11_TEST_READ_TOKEN }}
+          DISPATCH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
+          current_source=$(gh api repos/edsabirzyanov/perinatal-site/commits/master --jq .sha)
+          current_editorial=$(gh api repos/edsabirzyanov/perinatal-editorial-content/commits/main --jq .sha)
+          if [ "$current_source" != "$EXPECTED_SOURCE_SHA" ] || [ "$current_editorial" != "$EXPECTED_EDITORIAL_SHA" ]; then
+            echo 'A newer source/content combination exists; keep the current website and queue a fresh build.'
+            GH_TOKEN="$DISPATCH_TOKEN" gh workflow run r11-test-pages.yml --repo edsabirzyanov/perinatal-preview --ref main -f publish=true
+            exit 0
+          fi
           test "$(git -C published rev-parse HEAD)" = "$EXPECTED_PREVIEW_SHA" || { echo 'Preview changed since verification; retry on the new head.' >&2; exit 1; }
           test -f test-site/index.html
           test -f test-site/departments/delivery/index.html
@@ -272,6 +284,4 @@ jobs:
           if git -C published diff --cached --quiet; then echo 'Test site unchanged'; exit 0; fi
           git -C published commit -m 'Update isolated R11 test site'
           git -C published push origin HEAD:main
-
-
 

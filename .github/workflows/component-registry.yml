@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: edsabirzyanov/perinatal-site
-          ref: integration/r11-current
+          ref: master
           token: ${{ secrets.R11_TEST_READ_TOKEN }}
           path: source
           persist-credentials: false
