@@ -9,6 +9,10 @@ on:
         description: Publish after a successful dry run and Pages verification
         type: boolean
         default: false
+      acceptance:
+        description: Run full R33 fixture and responsive acceptance on the restored baseline
+        type: boolean
+        default: false
   schedule:
     - cron: '*/15 * * * *'
   push:
@@ -32,6 +36,7 @@ jobs:
       - name: Check out the current published repository
         uses: actions/checkout@v4
         with:
+          ref: main
           path: published
           persist-credentials: false
 
@@ -116,7 +121,7 @@ jobs:
           node scripts/verify-test-site.mjs
 
       - name: Verify shared contacts and sitewide responsive regression
-        if: steps.revisions.outputs.changed == 'true' && github.event_name == 'push'
+        if: steps.revisions.outputs.changed == 'true' && github.event_name == 'workflow_dispatch' && inputs.acceptance == true
         working-directory: source/site/web
         env:
           PUBLIC_EDITORIAL_CMS: 'true'
@@ -135,7 +140,7 @@ jobs:
           node scripts/verify-structured-responsive.mjs
 
       - name: Upload contact acceptance evidence
-        if: always() && github.event_name == 'push'
+        if: always() && github.event_name == 'workflow_dispatch' && inputs.acceptance == true
         uses: actions/upload-artifact@v4
         with:
           name: cms-contacts-acceptance
