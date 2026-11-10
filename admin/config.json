@@ -2903,7 +2903,7 @@
                     {
                       "name": "subtitle",
                       "label": "Подзаголовок",
-                      "widget": "text"
+                      "widget": "hidden"
                     },
                     {
                       "name": "buttons",

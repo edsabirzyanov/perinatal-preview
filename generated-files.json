@@ -685,11 +685,11 @@
     },
     {
       "path": "admin/config.json",
-      "sha256": "584557817199d24e96fb3d04bf75f4b131228a0bf5573abd5b18ceb528176e73"
+      "sha256": "a235973e3de6200761c2681ef0bfec2c08ea6ca1a26423e3b1b551b75349f1e1"
     },
     {
       "path": "admin/index.html",
-      "sha256": "5af77f74076df661d2055fbfd000b87e63bcfcbb671fb81f9f3b8d8eb7eec353"
+      "sha256": "076e68679601d5f4e3b9bb7fdc1a95aec568ece2eff9a76873ed151d0f63b156"
     },
     {
       "path": "admin/validate.js",
@@ -737,7 +737,7 @@
     },
     {
       "path": "deployment-revisions.json",
-      "sha256": "994d3dc3d06e4f435d291fe3d58dc4100858cdd0ec4ffb78e284a827b1532b07"
+      "sha256": "2f944baa2912355663d105ee9b7c78fd3824c90019a9bce82857eda4bda07954"
     },
     {
       "path": "favicon.ico",
@@ -753,7 +753,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "77f169074a408016a0fd1f77f902cced91c2ffdd5a0d3e432fb9e52604f71ff6"
+      "sha256": "7bd199d82b02fcab9178af2f3f3081d77e8a1882e804a82f0eecc908e442183c"
     },
     {
       "path": "og-image.jpg",
