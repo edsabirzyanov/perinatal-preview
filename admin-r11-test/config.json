@@ -25833,6 +25833,375 @@
           ]
         }
       ]
+    },
+    {
+      "name": "shared-contacts",
+      "label": "Общие контакты",
+      "delete": false,
+      "editor": {
+        "preview": false,
+        "second_pane": false
+      },
+      "files": [
+        {
+          "name": "r33",
+          "label": "R33 — Контакты",
+          "file": "content/editable/r33.json",
+          "format": "json",
+          "output": {
+            "omit_empty_optional_fields": false
+          },
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "identity",
+              "widget": "hidden"
+            },
+            {
+              "name": "content",
+              "label": "Единый реестр контактов — для всего сайта",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "general",
+                  "label": "Общие контакты центра",
+                  "required": false,
+                  "widget": "object",
+                  "collapsed": true,
+                  "fields": [
+                    {
+                      "name": "name",
+                      "label": "Название учреждения",
+                      "required": false,
+                      "widget": "text",
+                      "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                    },
+                    {
+                      "name": "main",
+                      "label": "Основной телефон",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "label",
+                          "label": "Подпись на сайте",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        },
+                        {
+                          "name": "display",
+                          "label": "Номер на сайте",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        },
+                        {
+                          "name": "href",
+                          "label": "Ссылка для звонка (tel:)",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Номер и tel: меняются согласованно; формат страны не преобразуется автоматически."
+                        }
+                      ]
+                    },
+                    {
+                      "name": "admission",
+                      "label": "Приёмное отделение",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "label",
+                          "label": "Подпись на сайте",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        },
+                        {
+                          "name": "extension",
+                          "label": "Добавочный номер",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        }
+                      ]
+                    },
+                    {
+                      "name": "hours",
+                      "label": "Общие часы работы (не часы телефонной линии)",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "state",
+                          "label": "Состояние материала",
+                          "widget": "select",
+                          "default": "null",
+                          "options": [
+                            {
+                              "label": "Не предоставлено (null)",
+                              "value": "null"
+                            },
+                            {
+                              "label": "Указано / список (может быть пустым)",
+                              "value": "value"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "value",
+                          "label": "Общие часы работы (не часы телефонной линии)",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                          "default": ""
+                        }
+                      ],
+                      "hint": "Не указано: состояние null, значение пустое. Не вводите слово null. Сохранение не подтверждает сведения."
+                    }
+                  ]
+                },
+                {
+                  "name": "address",
+                  "label": "Адрес и проезд",
+                  "required": false,
+                  "widget": "object",
+                  "collapsed": true,
+                  "fields": [
+                    {
+                      "name": "postal",
+                      "label": "Полный почтовый адрес",
+                      "required": false,
+                      "widget": "text",
+                      "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                    },
+                    {
+                      "name": "directionsUrl",
+                      "label": "Существующий маршрут Яндекса",
+                      "required": false,
+                      "widget": "string",
+                      "hint": "Историческая ссылка сохранена. Обновление карты требует отдельной проверки источника, без автоматического поиска координат.",
+                      "readonly": true
+                    },
+                    {
+                      "name": "sharedMapUrl",
+                      "label": "Существующая ссылка Яндекс Карт",
+                      "required": false,
+                      "widget": "string",
+                      "hint": "Историческая ссылка сохранена. Обновление карты требует отдельной проверки источника, без автоматического поиска координат.",
+                      "readonly": true
+                    },
+                    {
+                      "name": "embeddedMapUrl",
+                      "label": "Существующая встроенная карта",
+                      "required": false,
+                      "widget": "string",
+                      "hint": "Историческая ссылка сохранена. Обновление карты требует отдельной проверки источника, без автоматического поиска координат.",
+                      "readonly": true
+                    },
+                    {
+                      "name": "routeDestination",
+                      "label": "Страница и якорь проезда",
+                      "required": false,
+                      "widget": "string",
+                      "hint": "Историческая ссылка сохранена. Обновление карты требует отдельной проверки источника, без автоматического поиска координат.",
+                      "readonly": true
+                    }
+                  ]
+                },
+                {
+                  "name": "paid",
+                  "label": "Контакты платных услуг",
+                  "required": false,
+                  "widget": "object",
+                  "collapsed": true,
+                  "fields": [
+                    {
+                      "name": "label",
+                      "label": "Подпись на сайте",
+                      "required": false,
+                      "widget": "text",
+                      "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                    },
+                    {
+                      "name": "display",
+                      "label": "Номер на сайте",
+                      "required": false,
+                      "widget": "text",
+                      "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                    },
+                    {
+                      "name": "href",
+                      "label": "Ссылка для звонка (tel:)",
+                      "required": false,
+                      "widget": "text",
+                      "hint": "Номер и tel: меняются согласованно; формат страны не преобразуется автоматически."
+                    },
+                    {
+                      "name": "email",
+                      "label": "Электронная почта",
+                      "required": false,
+                      "widget": "text",
+                      "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                    }
+                  ]
+                },
+                {
+                  "name": "verification",
+                  "label": "Источник и проверка новых сведений",
+                  "required": false,
+                  "widget": "object",
+                  "collapsed": true,
+                  "fields": [
+                    {
+                      "name": "status",
+                      "label": "Статус проверки",
+                      "required": false,
+                      "widget": "select",
+                      "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                      "options": [
+                        {
+                          "label": "Исторические данные, актуальность не проверена",
+                          "value": "historical-unverified"
+                        },
+                        {
+                          "label": "Новые сведения ожидают проверки (факты на сайте сохраняются)",
+                          "value": "pending"
+                        },
+                        {
+                          "label": "Проверено отдельным институциональным согласованием",
+                          "value": "verified"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "source",
+                      "label": "Авторитетный институциональный источник",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "state",
+                          "label": "Состояние материала",
+                          "widget": "select",
+                          "default": "null",
+                          "options": [
+                            {
+                              "label": "Не предоставлено (null)",
+                              "value": "null"
+                            },
+                            {
+                              "label": "Указано / список (может быть пустым)",
+                              "value": "value"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "value",
+                          "label": "Авторитетный институциональный источник",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                          "default": ""
+                        }
+                      ],
+                      "hint": "Не указано: состояние null, значение пустое. Не вводите слово null. Сохранение не подтверждает сведения."
+                    },
+                    {
+                      "name": "note",
+                      "label": "Пояснение проверяющему",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "state",
+                          "label": "Состояние материала",
+                          "widget": "select",
+                          "default": "null",
+                          "options": [
+                            {
+                              "label": "Не предоставлено (null)",
+                              "value": "null"
+                            },
+                            {
+                              "label": "Указано / список (может быть пустым)",
+                              "value": "value"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "value",
+                          "label": "Пояснение проверяющему",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                          "default": ""
+                        }
+                      ],
+                      "hint": "Не указано: состояние null, значение пустое. Не вводите слово null. Сохранение не подтверждает сведения."
+                    }
+                  ]
+                }
+              ],
+              "hint": "Подписи синхронизируются на сайте. Изменённые факты остаются приватным предложением до отдельного согласования. Контакты отделений из авторских материалов здесь не меняются."
+            },
+            {
+              "name": "provenance",
+              "label": "Историческое происхождение — защищено",
+              "widget": "object",
+              "collapsed": true,
+              "fields": [
+                {
+                  "name": "status",
+                  "label": "Исторический статус",
+                  "widget": "string",
+                  "readonly": true
+                },
+                {
+                  "name": "main",
+                  "label": "Общий источник",
+                  "widget": "string",
+                  "readonly": true
+                },
+                {
+                  "name": "paid",
+                  "label": "Источник платных услуг",
+                  "widget": "string",
+                  "readonly": true
+                },
+                {
+                  "name": "composition",
+                  "label": "Композиционный документ",
+                  "widget": "string",
+                  "readonly": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
