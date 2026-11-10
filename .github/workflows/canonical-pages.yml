@@ -1,0 +1,123 @@
+name: Canonical website
+run-name: Canonical source and editorial publication
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        type: boolean
+        default: true
+  schedule:
+    - cron: '*/15 * * * *'
+  push:
+    branches: [main]
+    paths: ['.github/workflows/canonical-pages.yml']
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.R11_PREVIEW_WRITE_TOKEN }}
+          path: published
+      - uses: actions/checkout@v4
+        with:
+          repository: edsabirzyanov/perinatal-site
+          ref: master
+          token: ${{ secrets.R11_TEST_READ_TOKEN }}
+          path: source
+          persist-credentials: false
+      - name: Pin source, content and publication revisions
+        id: revisions
+        env:
+          GH_TOKEN: ${{ secrets.R11_TEST_READ_TOKEN }}
+        run: |
+          set -euo pipefail
+          source_sha=$(git -C source rev-parse HEAD)
+          editorial_sha=$(gh api repos/edsabirzyanov/perinatal-editorial-content/commits/main --jq .sha)
+          preview_sha=$(git -C published rev-parse HEAD)
+          [[ "$source_sha" =~ ^[a-f0-9]{40}$ && "$editorial_sha" =~ ^[a-f0-9]{40}$ ]]
+          echo "source=$source_sha" >> "$GITHUB_OUTPUT"
+          echo "editorial=$editorial_sha" >> "$GITHUB_OUTPUT"
+          echo "preview=$preview_sha" >> "$GITHUB_OUTPUT"
+          changed=true
+          if test -f published/deployment-revisions.json && jq -e --arg s "$source_sha" --arg e "$editorial_sha" '.source==$s and .editorial==$e and .base=="/perinatal-preview/"' published/deployment-revisions.json >/dev/null; then changed=false; fi
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          echo "source=$source_sha editorial=$editorial_sha preview=$preview_sha changed=$changed"
+      - uses: actions/setup-node@v4
+        if: steps.revisions.outputs.changed == 'true'
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: source/site/web/package-lock.json
+      - name: Validate CMS, immutable blobs and latest complete implementation
+        if: steps.revisions.outputs.changed == 'true'
+        working-directory: source/site/web
+        env:
+          GITHUB_TOKEN: ${{ secrets.R11_TEST_READ_TOKEN }}
+          EDITORIAL_CONTENT_REF: ${{ steps.revisions.outputs.editorial }}
+        run: |
+          npm ci --no-audit --no-fund
+          node scripts/prepare-test-cms.mjs
+          node scripts/verify-cms-contract.mjs
+          node scripts/sync-editorial-from-github.mjs
+          npm run check
+      - name: Build and verify the canonical root and current CMS
+        if: steps.revisions.outputs.changed == 'true'
+        working-directory: source/site/web
+        env:
+          PUBLIC_EDITORIAL_PREVIEW: 'true'
+          PUBLIC_EDITORIAL_CMS: 'true'
+          SOURCE_SHA: ${{ steps.revisions.outputs.source }}
+          EDITORIAL_SHA: ${{ steps.revisions.outputs.editorial }}
+          PREVIEW_SHA: ${{ steps.revisions.outputs.preview }}
+        run: |
+          npm run build:canonical
+          node scripts/verify-canonical-site.mjs
+          node scripts/canonical-artifact.mjs assemble ../../../canonical-artifact
+      - uses: actions/upload-artifact@v4
+        if: steps.revisions.outputs.changed == 'true'
+        with:
+          name: canonical-website-and-cms
+          path: canonical-artifact
+          if-no-files-found: error
+      - name: Reject stale builds and queue the current pair
+        if: steps.revisions.outputs.changed == 'true'
+        id: fresh
+        env:
+          GH_TOKEN: ${{ secrets.R11_TEST_READ_TOKEN }}
+          DISPATCH_TOKEN: ${{ github.token }}
+          SOURCE_SHA: ${{ steps.revisions.outputs.source }}
+          EDITORIAL_SHA: ${{ steps.revisions.outputs.editorial }}
+        run: |
+          set -euo pipefail
+          s=$(gh api repos/edsabirzyanov/perinatal-site/commits/master --jq .sha)
+          e=$(gh api repos/edsabirzyanov/perinatal-editorial-content/commits/main --jq .sha)
+          if test "$s" != "$SOURCE_SHA" || test "$e" != "$EDITORIAL_SHA"; then
+            GH_TOKEN="$DISPATCH_TOKEN" gh workflow run canonical-pages.yml --repo edsabirzyanov/perinatal-preview --ref main -f publish=true
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+          else echo 'ready=true' >> "$GITHUB_OUTPUT"; fi
+      - name: Replace explicitly owned generated files only
+        if: steps.fresh.outputs.ready == 'true' && (github.event_name != 'workflow_dispatch' || inputs.publish == true)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREVIEW_SHA: ${{ steps.revisions.outputs.preview }}
+        run: |
+          set -euo pipefail
+          test "$(gh api repos/edsabirzyanov/perinatal-preview/commits/main --jq .sha)" = "$PREVIEW_SHA" || { echo 'Preview changed; retain website and rerun.'; gh workflow run canonical-pages.yml --repo edsabirzyanov/perinatal-preview --ref main -f publish=true; exit 0; }
+          node source/site/web/scripts/canonical-artifact.mjs publish canonical-artifact published
+          git -C published config user.name 'github-actions[bot]'
+          git -C published config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C published add -A
+          git -C published diff --cached --name-only > changed-files.txt
+          node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync('published/generated-files.json'));const old=JSON.parse(require('child_process').execFileSync('git',['-C','published','show','HEAD:generated-files.json']));const allowed=new Set([...m.files,...old.files].map(f=>f.path));allowed.add('generated-files.json');for(const p of fs.readFileSync('changed-files.txt','utf8').trim().split('\n').filter(Boolean))if(!allowed.has(p))throw Error('Unowned staged path '+p)"
+          if git -C published diff --cached --quiet; then exit 0; fi
+          git -C published commit -m 'Publish canonical Astro website and CMS'
+          git -C published push origin HEAD:main
