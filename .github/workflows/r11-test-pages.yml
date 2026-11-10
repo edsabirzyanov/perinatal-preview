@@ -227,7 +227,8 @@ jobs:
           if find test-site -type l | grep -q .; then echo 'Symlink in test artifact' >&2; exit 1; fi
           if [ -L published/r11-test ]; then echo 'Unsafe test directory' >&2; exit 1; fi
           mkdir -p published/r11-test
-          rsync -a --delete test-site/ published/r11-test/
+          rsync -a --checksum --delete test-site/ published/r11-test/
+          cmp test-site/deployment-revisions.json published/r11-test/deployment-revisions.json
           git -C published config user.name 'github-actions[bot]'
           git -C published config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git -C published add -- r11-test/
@@ -237,4 +238,4 @@ jobs:
 
 
 
-# Stage 2 versioned CMS source: 0b1f36049833516e576c27538ceb84cbb2730562
+# Stage 2 preserved gaps / checksum-verified source: 9141c089f07e92b760918cdea435b317c8bac719
