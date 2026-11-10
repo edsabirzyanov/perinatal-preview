@@ -114,21 +114,22 @@ jobs:
           node node_modules/astro/bin/astro.mjs build --config astro.r11-test.config.mjs
           node scripts/verify-test-site.mjs
 
-      - name: Verify Stage 3 responsive and populated patient contracts on release
+      - name: Verify CMS event release rendering and responsive regression
         if: steps.revisions.outputs.changed == 'true' && github.event_name == 'push'
         working-directory: source/site/web
         env:
           PUBLIC_EDITORIAL_CMS: 'true'
           PUBLIC_EDITORIAL_PREVIEW: 'true'
-          CMS_QA_DIR: .cache/cms-patient
-          CMS_QA_CODES: R01,R04,R11,R12,R18,R20,R21,R22,R23,R24,R25,R26
+          CMS_QA_DIR: .cache/cms-events
+          CMS_QA_CODES: R01,R04,R11,R12,R19,R23
           CMS_PIXEL_TOLERANCE: '8'
         run: |
           npx playwright install --with-deps chromium
           npm run check
-          mkdir -p .cache/cms-patient/baseline
-          cp -a dist-r11-test/. .cache/cms-patient/baseline/
-          node scripts/verify-patient-render.mjs
+          mkdir -p .cache/cms-events/baseline
+          cp -a dist-r11-test/. .cache/cms-events/baseline/
+          node scripts/verify-event-baseline.mjs
+          node scripts/verify-event-render.mjs
           node scripts/verify-structured-responsive.mjs
 
       - name: Verify and assemble Pages artifact

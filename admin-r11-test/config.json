@@ -18009,6 +18009,1354 @@
           ]
         }
       ]
+    },
+    {
+      "name": "event-records",
+      "label": "Дни открытых дверей — события",
+      "delete": false,
+      "editor": {
+        "preview": false,
+        "second_pane": false
+      },
+      "files": [
+        {
+          "name": "r19",
+          "label": "R19 — Дни открытых дверей",
+          "file": "content/editable/r19.json",
+          "format": "json",
+          "output": {
+            "omit_empty_optional_fields": false
+          },
+          "fields": [
+            {
+              "name": "schemaVersion",
+              "widget": "hidden"
+            },
+            {
+              "name": "routeId",
+              "widget": "hidden"
+            },
+            {
+              "name": "adapter",
+              "widget": "hidden"
+            },
+            {
+              "name": "sourceSnapshot",
+              "widget": "hidden"
+            },
+            {
+              "name": "content",
+              "label": "Материалы страницы",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "events",
+                  "label": "Анонсы встреч — только из подлинного источника",
+                  "required": false,
+                  "widget": "list",
+                  "default": [],
+                  "collapsed": true,
+                  "allow_add": true,
+                  "allow_remove": true,
+                  "allow_reorder": true,
+                  "allow_duplicate": false,
+                  "fields": [
+                    {
+                      "name": "recordId",
+                      "widget": "hidden",
+                      "required": false,
+                      "default": ""
+                    },
+                    {
+                      "name": "identity",
+                      "widget": "hidden",
+                      "required": false,
+                      "default": null
+                    },
+                    {
+                      "name": "sourceId",
+                      "label": "Идентификатор источника",
+                      "required": false,
+                      "widget": "text",
+                      "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                    },
+                    {
+                      "name": "provenance",
+                      "label": "Происхождение и сведения об источнике",
+                      "required": false,
+                      "widget": "text",
+                      "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                    },
+                    {
+                      "name": "originalOrder",
+                      "label": "Порядок в исходном материале",
+                      "required": false,
+                      "widget": "number",
+                      "value_type": "int",
+                      "min": 0,
+                      "default": 0
+                    },
+                    {
+                      "name": "permissionStatus",
+                      "label": "Разрешение на публикацию",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "state",
+                          "label": "Состояние материала",
+                          "widget": "select",
+                          "default": "null",
+                          "options": [
+                            {
+                              "label": "Не предоставлено (null)",
+                              "value": "null"
+                            },
+                            {
+                              "label": "Указано / список (может быть пустым)",
+                              "value": "value"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "value",
+                          "label": "Разрешение на публикацию",
+                          "required": false,
+                          "widget": "select",
+                          "default": "unknown",
+                          "options": [
+                            {
+                              "label": "Не установлено",
+                              "value": "unknown"
+                            },
+                            {
+                              "label": "Ожидает подтверждения",
+                              "value": "pending"
+                            },
+                            {
+                              "label": "Разрешено по источнику",
+                              "value": "granted"
+                            },
+                            {
+                              "label": "Не разрешено",
+                              "value": "denied"
+                            }
+                          ]
+                        }
+                      ],
+                      "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                    },
+                    {
+                      "name": "verificationStatus",
+                      "label": "Проверка подлинности и сведений",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "state",
+                          "label": "Состояние материала",
+                          "widget": "select",
+                          "default": "null",
+                          "options": [
+                            {
+                              "label": "Не предоставлено (null)",
+                              "value": "null"
+                            },
+                            {
+                              "label": "Указано / список (может быть пустым)",
+                              "value": "value"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "value",
+                          "label": "Проверка подлинности и сведений",
+                          "required": false,
+                          "widget": "select",
+                          "default": "unknown",
+                          "options": [
+                            {
+                              "label": "Не проверено",
+                              "value": "unknown"
+                            },
+                            {
+                              "label": "Ожидает проверки",
+                              "value": "pending"
+                            },
+                            {
+                              "label": "Проверено по источнику",
+                              "value": "verified"
+                            },
+                            {
+                              "label": "Отклонено",
+                              "value": "rejected"
+                            }
+                          ]
+                        }
+                      ],
+                      "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                    },
+                    {
+                      "name": "title",
+                      "label": "Название встречи",
+                      "required": false,
+                      "widget": "text",
+                      "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                    },
+                    {
+                      "name": "status",
+                      "label": "Статус встречи",
+                      "required": false,
+                      "widget": "select",
+                      "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                      "default": "scheduled",
+                      "options": [
+                        {
+                          "label": "Назначена",
+                          "value": "scheduled"
+                        },
+                        {
+                          "label": "Перенесена",
+                          "value": "rescheduled"
+                        },
+                        {
+                          "label": "Отменена",
+                          "value": "cancelled"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "occurrence",
+                      "label": "Текущая дата, место и формат",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "state",
+                          "label": "Состояние материала",
+                          "widget": "select",
+                          "default": "null",
+                          "options": [
+                            {
+                              "label": "Не предоставлено (null)",
+                              "value": "null"
+                            },
+                            {
+                              "label": "Указано / список (может быть пустым)",
+                              "value": "value"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "value",
+                          "label": "Текущая дата, место и формат",
+                          "required": false,
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "startsAt",
+                              "label": "Дата и время ISO 8601 с часовым поясом",
+                              "required": false,
+                              "widget": "text",
+                              "hint": "Формат: YYYY-MM-DDTHH:mm:ss+03:00 или YYYY-MM-DDTHH:mm:ssZ. Не указывайте предполагаемую дату."
+                            },
+                            {
+                              "name": "venue",
+                              "label": "Место и вход",
+                              "required": false,
+                              "widget": "object",
+                              "collapsed": true,
+                              "fields": [
+                                {
+                                  "name": "state",
+                                  "label": "Состояние материала",
+                                  "widget": "select",
+                                  "default": "null",
+                                  "options": [
+                                    {
+                                      "label": "Не предоставлено (null)",
+                                      "value": "null"
+                                    },
+                                    {
+                                      "label": "Указано / список (может быть пустым)",
+                                      "value": "value"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "value",
+                                  "label": "Место и вход",
+                                  "required": false,
+                                  "widget": "object",
+                                  "collapsed": true,
+                                  "fields": [
+                                    {
+                                      "name": "name",
+                                      "label": "Название места из источника",
+                                      "required": false,
+                                      "widget": "text",
+                                      "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                                    },
+                                    {
+                                      "name": "address",
+                                      "label": "Адрес и вход из источника",
+                                      "required": false,
+                                      "widget": "object",
+                                      "collapsed": true,
+                                      "fields": [
+                                        {
+                                          "name": "state",
+                                          "label": "Состояние материала",
+                                          "widget": "select",
+                                          "default": "null",
+                                          "options": [
+                                            {
+                                              "label": "Не предоставлено (null)",
+                                              "value": "null"
+                                            },
+                                            {
+                                              "label": "Указано / список (может быть пустым)",
+                                              "value": "value"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "value",
+                                          "label": "Адрес и вход из источника",
+                                          "required": false,
+                                          "widget": "text",
+                                          "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                                          "default": ""
+                                        }
+                                      ],
+                                      "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                                    },
+                                    {
+                                      "name": "routeUrl",
+                                      "label": "Подтверждённая ссылка на маршрут",
+                                      "required": false,
+                                      "widget": "object",
+                                      "collapsed": true,
+                                      "fields": [
+                                        {
+                                          "name": "state",
+                                          "label": "Состояние материала",
+                                          "widget": "select",
+                                          "default": "null",
+                                          "options": [
+                                            {
+                                              "label": "Не предоставлено (null)",
+                                              "value": "null"
+                                            },
+                                            {
+                                              "label": "Указано / список (может быть пустым)",
+                                              "value": "value"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "value",
+                                          "label": "Подтверждённая ссылка на маршрут",
+                                          "required": false,
+                                          "widget": "text",
+                                          "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                                          "default": ""
+                                        }
+                                      ],
+                                      "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                                    }
+                                  ],
+                                  "default": {
+                                    "name": "",
+                                    "address": {
+                                      "state": "null",
+                                      "value": ""
+                                    },
+                                    "routeUrl": {
+                                      "state": "null",
+                                      "value": ""
+                                    }
+                                  }
+                                }
+                              ],
+                              "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                            },
+                            {
+                              "name": "format",
+                              "label": "Формат встречи",
+                              "required": false,
+                              "widget": "object",
+                              "collapsed": true,
+                              "fields": [
+                                {
+                                  "name": "state",
+                                  "label": "Состояние материала",
+                                  "widget": "select",
+                                  "default": "null",
+                                  "options": [
+                                    {
+                                      "label": "Не предоставлено (null)",
+                                      "value": "null"
+                                    },
+                                    {
+                                      "label": "Указано / список (может быть пустым)",
+                                      "value": "value"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "value",
+                                  "label": "Формат встречи",
+                                  "required": false,
+                                  "widget": "text",
+                                  "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                                  "default": ""
+                                }
+                              ],
+                              "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                            }
+                          ],
+                          "default": {
+                            "startsAt": "",
+                            "venue": {
+                              "state": "null",
+                              "value": {
+                                "name": "",
+                                "address": {
+                                  "state": "null",
+                                  "value": ""
+                                },
+                                "routeUrl": {
+                                  "state": "null",
+                                  "value": ""
+                                }
+                              }
+                            },
+                            "format": {
+                              "state": "null",
+                              "value": ""
+                            }
+                          }
+                        }
+                      ],
+                      "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                    },
+                    {
+                      "name": "previousOccurrence",
+                      "label": "Прежняя дата перенесённой встречи",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "state",
+                          "label": "Состояние материала",
+                          "widget": "select",
+                          "default": "null",
+                          "options": [
+                            {
+                              "label": "Не предоставлено (null)",
+                              "value": "null"
+                            },
+                            {
+                              "label": "Указано / список (может быть пустым)",
+                              "value": "value"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "value",
+                          "label": "Прежняя дата перенесённой встречи",
+                          "required": false,
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "startsAt",
+                              "label": "Дата и время ISO 8601 с часовым поясом",
+                              "required": false,
+                              "widget": "text",
+                              "hint": "Формат: YYYY-MM-DDTHH:mm:ss+03:00 или YYYY-MM-DDTHH:mm:ssZ. Не указывайте предполагаемую дату."
+                            },
+                            {
+                              "name": "venue",
+                              "label": "Место и вход",
+                              "required": false,
+                              "widget": "object",
+                              "collapsed": true,
+                              "fields": [
+                                {
+                                  "name": "state",
+                                  "label": "Состояние материала",
+                                  "widget": "select",
+                                  "default": "null",
+                                  "options": [
+                                    {
+                                      "label": "Не предоставлено (null)",
+                                      "value": "null"
+                                    },
+                                    {
+                                      "label": "Указано / список (может быть пустым)",
+                                      "value": "value"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "value",
+                                  "label": "Место и вход",
+                                  "required": false,
+                                  "widget": "object",
+                                  "collapsed": true,
+                                  "fields": [
+                                    {
+                                      "name": "name",
+                                      "label": "Название места из источника",
+                                      "required": false,
+                                      "widget": "text",
+                                      "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                                    },
+                                    {
+                                      "name": "address",
+                                      "label": "Адрес и вход из источника",
+                                      "required": false,
+                                      "widget": "object",
+                                      "collapsed": true,
+                                      "fields": [
+                                        {
+                                          "name": "state",
+                                          "label": "Состояние материала",
+                                          "widget": "select",
+                                          "default": "null",
+                                          "options": [
+                                            {
+                                              "label": "Не предоставлено (null)",
+                                              "value": "null"
+                                            },
+                                            {
+                                              "label": "Указано / список (может быть пустым)",
+                                              "value": "value"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "value",
+                                          "label": "Адрес и вход из источника",
+                                          "required": false,
+                                          "widget": "text",
+                                          "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                                          "default": ""
+                                        }
+                                      ],
+                                      "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                                    },
+                                    {
+                                      "name": "routeUrl",
+                                      "label": "Подтверждённая ссылка на маршрут",
+                                      "required": false,
+                                      "widget": "object",
+                                      "collapsed": true,
+                                      "fields": [
+                                        {
+                                          "name": "state",
+                                          "label": "Состояние материала",
+                                          "widget": "select",
+                                          "default": "null",
+                                          "options": [
+                                            {
+                                              "label": "Не предоставлено (null)",
+                                              "value": "null"
+                                            },
+                                            {
+                                              "label": "Указано / список (может быть пустым)",
+                                              "value": "value"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "value",
+                                          "label": "Подтверждённая ссылка на маршрут",
+                                          "required": false,
+                                          "widget": "text",
+                                          "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                                          "default": ""
+                                        }
+                                      ],
+                                      "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                                    }
+                                  ],
+                                  "default": {
+                                    "name": "",
+                                    "address": {
+                                      "state": "null",
+                                      "value": ""
+                                    },
+                                    "routeUrl": {
+                                      "state": "null",
+                                      "value": ""
+                                    }
+                                  }
+                                }
+                              ],
+                              "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                            },
+                            {
+                              "name": "format",
+                              "label": "Формат встречи",
+                              "required": false,
+                              "widget": "object",
+                              "collapsed": true,
+                              "fields": [
+                                {
+                                  "name": "state",
+                                  "label": "Состояние материала",
+                                  "widget": "select",
+                                  "default": "null",
+                                  "options": [
+                                    {
+                                      "label": "Не предоставлено (null)",
+                                      "value": "null"
+                                    },
+                                    {
+                                      "label": "Указано / список (может быть пустым)",
+                                      "value": "value"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "value",
+                                  "label": "Формат встречи",
+                                  "required": false,
+                                  "widget": "text",
+                                  "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                                  "default": ""
+                                }
+                              ],
+                              "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                            }
+                          ],
+                          "default": {
+                            "startsAt": "",
+                            "venue": {
+                              "state": "null",
+                              "value": {
+                                "name": "",
+                                "address": {
+                                  "state": "null",
+                                  "value": ""
+                                },
+                                "routeUrl": {
+                                  "state": "null",
+                                  "value": ""
+                                }
+                              }
+                            },
+                            "format": {
+                              "state": "null",
+                              "value": ""
+                            }
+                          }
+                        }
+                      ],
+                      "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                    },
+                    {
+                      "name": "participation",
+                      "label": "Полные условия участия",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "state",
+                          "label": "Состояние материала",
+                          "widget": "select",
+                          "default": "null",
+                          "options": [
+                            {
+                              "label": "Не предоставлено (null)",
+                              "value": "null"
+                            },
+                            {
+                              "label": "Указано / список (может быть пустым)",
+                              "value": "value"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "value",
+                          "label": "Полные условия участия",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                          "default": ""
+                        }
+                      ],
+                      "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                    },
+                    {
+                      "name": "registration",
+                      "label": "Запись на встречу",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "state",
+                          "label": "Состояние материала",
+                          "widget": "select",
+                          "default": "null",
+                          "options": [
+                            {
+                              "label": "Не предоставлено (null)",
+                              "value": "null"
+                            },
+                            {
+                              "label": "Указано / список (может быть пустым)",
+                              "value": "value"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "value",
+                          "label": "Запись на встречу",
+                          "required": false,
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "state",
+                              "label": "Состояние записи",
+                              "required": false,
+                              "widget": "select",
+                              "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                              "default": "not-supplied",
+                              "options": [
+                                {
+                                  "label": "Не указано",
+                                  "value": "not-supplied"
+                                },
+                                {
+                                  "label": "Открыта по источнику",
+                                  "value": "open"
+                                },
+                                {
+                                  "label": "Закрыта",
+                                  "value": "closed"
+                                },
+                                {
+                                  "label": "Не требуется по источнику",
+                                  "value": "not-required"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "label",
+                              "label": "Текст действия или сообщения",
+                              "required": false,
+                              "widget": "text",
+                              "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                            },
+                            {
+                              "name": "href",
+                              "label": "Подтверждённая ссылка записи / tel: / mailto:",
+                              "required": false,
+                              "widget": "object",
+                              "collapsed": true,
+                              "fields": [
+                                {
+                                  "name": "state",
+                                  "label": "Состояние материала",
+                                  "widget": "select",
+                                  "default": "null",
+                                  "options": [
+                                    {
+                                      "label": "Не предоставлено (null)",
+                                      "value": "null"
+                                    },
+                                    {
+                                      "label": "Указано / список (может быть пустым)",
+                                      "value": "value"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "value",
+                                  "label": "Подтверждённая ссылка записи / tel: / mailto:",
+                                  "required": false,
+                                  "widget": "text",
+                                  "hint": "Полноту и источник проверяет общий контракт при сохранении.",
+                                  "default": ""
+                                }
+                              ],
+                              "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                            }
+                          ],
+                          "default": {
+                            "state": "not-supplied",
+                            "label": "",
+                            "href": {
+                              "state": "null",
+                              "value": ""
+                            }
+                          }
+                        }
+                      ],
+                      "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                    },
+                    {
+                      "name": "contact",
+                      "label": "Контакт этой встречи",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "state",
+                          "label": "Состояние материала",
+                          "widget": "select",
+                          "default": "null",
+                          "options": [
+                            {
+                              "label": "Не предоставлено (null)",
+                              "value": "null"
+                            },
+                            {
+                              "label": "Указано / список (может быть пустым)",
+                              "value": "value"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "value",
+                          "label": "Контакт этой встречи",
+                          "required": false,
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "purpose",
+                              "label": "Назначение контакта",
+                              "required": false,
+                              "widget": "text",
+                              "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                            },
+                            {
+                              "name": "value",
+                              "label": "Значение",
+                              "required": false,
+                              "widget": "text",
+                              "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                            }
+                          ],
+                          "default": {
+                            "purpose": "",
+                            "value": ""
+                          }
+                        }
+                      ],
+                      "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                    }
+                  ]
+                },
+                {
+                  "name": "media",
+                  "label": "Подлинные фотографии с правами и согласием",
+                  "required": false,
+                  "widget": "object",
+                  "collapsed": true,
+                  "fields": [
+                    {
+                      "name": "state",
+                      "label": "Состояние материала",
+                      "widget": "select",
+                      "default": "null",
+                      "options": [
+                        {
+                          "label": "Не предоставлено (null)",
+                          "value": "null"
+                        },
+                        {
+                          "label": "Указано / список (может быть пустым)",
+                          "value": "value"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "value",
+                      "label": "Подлинные фотографии с правами и согласием",
+                      "required": false,
+                      "widget": "list",
+                      "default": [],
+                      "collapsed": true,
+                      "allow_add": true,
+                      "allow_remove": true,
+                      "allow_reorder": true,
+                      "allow_duplicate": false,
+                      "fields": [
+                        {
+                          "name": "recordId",
+                          "widget": "hidden",
+                          "required": false,
+                          "default": ""
+                        },
+                        {
+                          "name": "identity",
+                          "widget": "hidden",
+                          "required": false,
+                          "default": null
+                        },
+                        {
+                          "name": "sourceId",
+                          "label": "Идентификатор источника",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        },
+                        {
+                          "name": "provenance",
+                          "label": "Происхождение и сведения об источнике",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        },
+                        {
+                          "name": "originalOrder",
+                          "label": "Порядок в исходном материале",
+                          "required": false,
+                          "widget": "number",
+                          "value_type": "int",
+                          "min": 0,
+                          "default": 0
+                        },
+                        {
+                          "name": "permissionStatus",
+                          "label": "Разрешение на публикацию",
+                          "required": false,
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "state",
+                              "label": "Состояние материала",
+                              "widget": "select",
+                              "default": "null",
+                              "options": [
+                                {
+                                  "label": "Не предоставлено (null)",
+                                  "value": "null"
+                                },
+                                {
+                                  "label": "Указано / список (может быть пустым)",
+                                  "value": "value"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "value",
+                              "label": "Разрешение на публикацию",
+                              "required": false,
+                              "widget": "select",
+                              "default": "unknown",
+                              "options": [
+                                {
+                                  "label": "Не установлено",
+                                  "value": "unknown"
+                                },
+                                {
+                                  "label": "Ожидает подтверждения",
+                                  "value": "pending"
+                                },
+                                {
+                                  "label": "Разрешено по источнику",
+                                  "value": "granted"
+                                },
+                                {
+                                  "label": "Не разрешено",
+                                  "value": "denied"
+                                }
+                              ]
+                            }
+                          ],
+                          "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                        },
+                        {
+                          "name": "verificationStatus",
+                          "label": "Проверка подлинности и сведений",
+                          "required": false,
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "state",
+                              "label": "Состояние материала",
+                              "widget": "select",
+                              "default": "null",
+                              "options": [
+                                {
+                                  "label": "Не предоставлено (null)",
+                                  "value": "null"
+                                },
+                                {
+                                  "label": "Указано / список (может быть пустым)",
+                                  "value": "value"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "value",
+                              "label": "Проверка подлинности и сведений",
+                              "required": false,
+                              "widget": "select",
+                              "default": "unknown",
+                              "options": [
+                                {
+                                  "label": "Не проверено",
+                                  "value": "unknown"
+                                },
+                                {
+                                  "label": "Ожидает проверки",
+                                  "value": "pending"
+                                },
+                                {
+                                  "label": "Проверено по источнику",
+                                  "value": "verified"
+                                },
+                                {
+                                  "label": "Отклонено",
+                                  "value": "rejected"
+                                }
+                              ]
+                            }
+                          ],
+                          "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                        },
+                        {
+                          "name": "src",
+                          "label": "Файл фотографии",
+                          "required": false,
+                          "widget": "image",
+                          "media_folder": "/media/about",
+                          "public_folder": "/media/about",
+                          "choose_url": false
+                        },
+                        {
+                          "name": "alt",
+                          "label": "Описание изображения",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        },
+                        {
+                          "name": "caption",
+                          "label": "Исходная подпись",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        },
+                        {
+                          "name": "rightsConsentStatus",
+                          "label": "Права и согласие изображённых лиц",
+                          "required": false,
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "state",
+                              "label": "Состояние материала",
+                              "widget": "select",
+                              "default": "null",
+                              "options": [
+                                {
+                                  "label": "Не предоставлено (null)",
+                                  "value": "null"
+                                },
+                                {
+                                  "label": "Указано / список (может быть пустым)",
+                                  "value": "value"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "value",
+                              "label": "Права и согласие изображённых лиц",
+                              "required": false,
+                              "widget": "select",
+                              "default": "unknown",
+                              "options": [
+                                {
+                                  "label": "Не установлено",
+                                  "value": "unknown"
+                                },
+                                {
+                                  "label": "Ожидает подтверждения",
+                                  "value": "pending"
+                                },
+                                {
+                                  "label": "Разрешено по источнику",
+                                  "value": "granted"
+                                },
+                                {
+                                  "label": "Не разрешено",
+                                  "value": "denied"
+                                }
+                              ]
+                            }
+                          ],
+                          "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                        }
+                      ]
+                    }
+                  ],
+                  "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                },
+                {
+                  "name": "practicalContact",
+                  "label": "Подтверждённый контакт дней открытых дверей",
+                  "required": false,
+                  "widget": "object",
+                  "collapsed": true,
+                  "fields": [
+                    {
+                      "name": "state",
+                      "label": "Состояние материала",
+                      "widget": "select",
+                      "default": "null",
+                      "options": [
+                        {
+                          "label": "Не предоставлено (null)",
+                          "value": "null"
+                        },
+                        {
+                          "label": "Указано / список (может быть пустым)",
+                          "value": "value"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "value",
+                      "label": "Подтверждённый контакт дней открытых дверей",
+                      "required": false,
+                      "widget": "object",
+                      "collapsed": true,
+                      "fields": [
+                        {
+                          "name": "recordId",
+                          "widget": "hidden",
+                          "required": false,
+                          "default": ""
+                        },
+                        {
+                          "name": "identity",
+                          "widget": "hidden",
+                          "required": false,
+                          "default": null
+                        },
+                        {
+                          "name": "sourceId",
+                          "label": "Идентификатор источника",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        },
+                        {
+                          "name": "provenance",
+                          "label": "Происхождение и сведения об источнике",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        },
+                        {
+                          "name": "originalOrder",
+                          "label": "Порядок в исходном материале",
+                          "required": false,
+                          "widget": "number",
+                          "value_type": "int",
+                          "min": 0,
+                          "default": 0
+                        },
+                        {
+                          "name": "permissionStatus",
+                          "label": "Разрешение на публикацию",
+                          "required": false,
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "state",
+                              "label": "Состояние материала",
+                              "widget": "select",
+                              "default": "null",
+                              "options": [
+                                {
+                                  "label": "Не предоставлено (null)",
+                                  "value": "null"
+                                },
+                                {
+                                  "label": "Указано / список (может быть пустым)",
+                                  "value": "value"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "value",
+                              "label": "Разрешение на публикацию",
+                              "required": false,
+                              "widget": "select",
+                              "default": "unknown",
+                              "options": [
+                                {
+                                  "label": "Не установлено",
+                                  "value": "unknown"
+                                },
+                                {
+                                  "label": "Ожидает подтверждения",
+                                  "value": "pending"
+                                },
+                                {
+                                  "label": "Разрешено по источнику",
+                                  "value": "granted"
+                                },
+                                {
+                                  "label": "Не разрешено",
+                                  "value": "denied"
+                                }
+                              ]
+                            }
+                          ],
+                          "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                        },
+                        {
+                          "name": "verificationStatus",
+                          "label": "Проверка подлинности и сведений",
+                          "required": false,
+                          "widget": "object",
+                          "collapsed": true,
+                          "fields": [
+                            {
+                              "name": "state",
+                              "label": "Состояние материала",
+                              "widget": "select",
+                              "default": "null",
+                              "options": [
+                                {
+                                  "label": "Не предоставлено (null)",
+                                  "value": "null"
+                                },
+                                {
+                                  "label": "Указано / список (может быть пустым)",
+                                  "value": "value"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "value",
+                              "label": "Проверка подлинности и сведений",
+                              "required": false,
+                              "widget": "select",
+                              "default": "unknown",
+                              "options": [
+                                {
+                                  "label": "Не проверено",
+                                  "value": "unknown"
+                                },
+                                {
+                                  "label": "Ожидает проверки",
+                                  "value": "pending"
+                                },
+                                {
+                                  "label": "Проверено по источнику",
+                                  "value": "verified"
+                                },
+                                {
+                                  "label": "Отклонено",
+                                  "value": "rejected"
+                                }
+                              ]
+                            }
+                          ],
+                          "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                        },
+                        {
+                          "name": "purpose",
+                          "label": "Назначение контакта",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        },
+                        {
+                          "name": "value",
+                          "label": "Значение",
+                          "required": false,
+                          "widget": "text",
+                          "hint": "Полноту и источник проверяет общий контракт при сохранении."
+                        }
+                      ],
+                      "default": {
+                        "recordId": "",
+                        "identity": null,
+                        "sourceId": "",
+                        "provenance": "",
+                        "originalOrder": 0,
+                        "permissionStatus": {
+                          "state": "null",
+                          "value": "unknown"
+                        },
+                        "verificationStatus": {
+                          "state": "null",
+                          "value": "unknown"
+                        },
+                        "purpose": "",
+                        "value": ""
+                      }
+                    }
+                  ],
+                  "hint": "Для null оставьте значение пустым. Выбор списка сохраняет [] отдельно от null. Права и проверка не подтверждаются загрузкой."
+                }
+              ],
+              "hint": "Список событий может быть пустым []. Сохранение не подтверждает источник, права или открытие записи. Не создавайте условные анонсы."
+            },
+            {
+              "name": "displayText",
+              "label": "Существующие тексты разделов — рабочий источник, без утверждения анонсов",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "description",
+                  "label": "Вводный текст",
+                  "widget": "text"
+                },
+                {
+                  "name": "topics",
+                  "label": "Четыре текущие темы — по порядку",
+                  "widget": "list",
+                  "allow_add": false,
+                  "allow_remove": false,
+                  "allow_reorder": false,
+                  "allow_duplicate": false,
+                  "min": 4,
+                  "max": 4,
+                  "field": {
+                    "name": "value",
+                    "label": "Тема",
+                    "widget": "text"
+                  }
+                },
+                {
+                  "name": "audience",
+                  "label": "Для кого проводятся встречи",
+                  "widget": "text"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
