@@ -1,5 +1,6 @@
 name: R11 test site
 # Workflow changes also run a verified build and update the isolated test site.
+# R33 acceptance: canonical object ordering and homepage QA server verified.
 
 on:
   workflow_dispatch:
@@ -132,6 +133,19 @@ jobs:
           node scripts/verify-event-baseline.mjs
           node scripts/verify-contact-render.mjs
           node scripts/verify-structured-responsive.mjs
+
+      - name: Upload contact acceptance evidence
+        if: always() && github.event_name == 'push'
+        uses: actions/upload-artifact@v4
+        with:
+          name: cms-contacts-acceptance
+          path: |
+            source/site/web/.cache/cms-contacts/contracts.json
+            source/site/web/.cache/cms-contacts/render.json
+            source/site/web/.cache/cms-contacts/responsive.json
+            source/site/web/.cache/cms-contacts/*.png
+            source/site/web/.cache/cms-contacts/screenshots/
+          if-no-files-found: warn
 
       - name: Verify and assemble Pages artifact
         if: steps.revisions.outputs.changed == 'true'

@@ -626,7 +626,8 @@ function contactFacts(content){
 function validateContactRecord(input,route,source){
   const baseline=createContactRecord(route,source),result=validateAboutRecord(input,route,{spec:contactSpec,baseline}),value=result.content;
   const fail=message=>{throw Error('R33: '+message);};
-  const equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+  const ordered=v=>Array.isArray(v)?v.map(ordered):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,ordered(v[k])])):v;
+  const equal=(a,b)=>JSON.stringify(ordered(a))===JSON.stringify(ordered(b));
   if(!equal(input.identity,baseline.identity)||!equal(input.provenance,baseline.provenance))fail('Идентификаторы, владельцы и происхождение защищены');
   function plain(text,max=500){if(typeof text!=='string'||text.trim()!==text||text.length>max||/[\r\n<>\u0000-\u001f]/u.test(text)||['null','undefined'].includes(text.toLowerCase()))fail('Нужно непустое значение без разметки и крайних пробелов');}
   for(const text of [value.general.name,value.general.main.label,value.general.admission.label,value.paid.label,value.address.postal])plain(text);
