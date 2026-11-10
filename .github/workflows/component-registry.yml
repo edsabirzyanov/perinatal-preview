@@ -1,0 +1,57 @@
+name: Component registry
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_COMPONENT_REGISTRY: ${{ vars.PUBLIC_COMPONENT_REGISTRY || 'false' }}
+      ASTRO_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.R11_PREVIEW_WRITE_TOKEN }}
+          path: published
+      - uses: actions/checkout@v4
+        with:
+          repository: edsabirzyanov/perinatal-site
+          ref: integration/r11-current
+          token: ${{ secrets.R11_TEST_READ_TOKEN }}
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: source/site/web/package-lock.json
+      - name: Build only the utility artifact
+        working-directory: source/site/web
+        run: |
+          npm ci --no-audit --no-fund
+          node internal/component-registry/generate.mjs
+          npm run check
+          npm run build -- --config astro.components.config.mjs
+          node internal/component-registry/verify-public.mjs --artifact
+      - name: Replace only components, including deletion when disabled
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git -C published rev-parse HEAD)" = "$(gh api repos/edsabirzyanov/perinatal-preview/commits/main --jq .sha)" || { echo 'Preview changed; rerun on its new head.' >&2; exit 1; }
+          test ! -L published/components
+          mkdir -p source/site/web/dist-components/components published/components
+          rsync -a --checksum --delete source/site/web/dist-components/components/ published/components/
+          git -C published config user.name 'github-actions[bot]'
+          git -C published config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C published add -A -- components/
+          test -z "$(git -C published diff --cached --name-only | grep -v '^components/' || true)"
+          if git -C published diff --cached --quiet; then echo 'Registry already matches flag'; exit 0; fi
+          git -C published commit -m 'Publish component registry according to its feature flag'
+          git -C published push origin HEAD:main
