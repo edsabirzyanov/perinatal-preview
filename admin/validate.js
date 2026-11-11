@@ -845,7 +845,7 @@ function presentationDecodeNode(value,node,old){
   // A no-op retains absent keys, null, [], empty strings and dormant defaults exactly.
   if(presentationEqual(value,presentationEncodeNode(old,node)))return presentationClone(old);
   if(node.kind==='nullable-scalar')return value===null||value===undefined||value===''?{state:'null',value:presentationClone(node.empty)}:{state:'value',value};
-  if(node.kind==='nullable')return value===null||value===undefined?{state:'null',value:presentationClone(node.empty)}:{state:'value',value:node.listEnvelope?presentationDecodeNode(value.items??[],node.inner.children[0],old?.state==='value'?old.value:undefined):presentationDecodeNode(value,node.inner,old?.state==='value'?old.value:undefined)};
+  if(node.kind==='nullable')return value===null||value===undefined?{state:'null',value:presentationClone(node.empty)}:{state:'value',value:node.listEnvelope?presentationDecodeNode(value.items??[],node.inner.children[0],old?.value??node.empty):presentationDecodeNode(value,node.inner,old?.value??node.empty)};
   if(node.kind==='object')return presentationDecodeObject(value,node.children,node.default);
   if(node.kind==='list'){
     value??=[]; // The native optional List may omit an empty editor value.
