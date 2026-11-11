@@ -712,7 +712,8 @@ function validateContactRecord(input,route,source){
     plain(phone.display,60);
     const normalized=phoneUri(phone.display);
     // Preserve valid legacy pairs exactly, including a historically absent +.
-    if(phone.href!==normalized&&phone.href!==normalized.replace('tel:+','tel:'))fail('Номер на экране не совпадает с tel: ссылкой');
+    const legacyTrunk=/^tel:8[0-9]{10}$/.test(phone.href)&&normalized==='tel:+7'+phone.href.slice(5);
+    if(phone.href!==normalized&&phone.href!==normalized.replace('tel:+','tel:')&&!legacyTrunk)fail('Номер на экране не совпадает с tel: ссылкой');
   }
   if(!/^[0-9]{1,8}$/.test(value.general.admission.extension))fail('Добавочный — от 1 до 8 цифр');
   if(!/^[A-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9](?:[A-Z0-9-]*[A-Z0-9])?(?:\.[A-Z0-9](?:[A-Z0-9-]*[A-Z0-9])?)+$/i.test(value.paid.email)||value.paid.email.includes('..'))fail('Некорректный email');
