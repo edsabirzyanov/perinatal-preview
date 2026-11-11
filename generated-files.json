@@ -685,15 +685,15 @@
     },
     {
       "path": "admin/config.json",
-      "sha256": "6eafa2f451d95c14900550704592e389c3c0b311532026277976c88fedc77b25"
+      "sha256": "929fa6ad4762bb78a18c1eb9554ac9e60b14469c5aa33cec68a235e8603283d9"
     },
     {
       "path": "admin/index.html",
-      "sha256": "ce1a2d4b4a292ff947e59f9d5d42ea86a1ca9da3287f6118c77f17a8353e76dd"
+      "sha256": "124b5455f8039f24845a618dbc2fb3a352240c55eb07f2eb41175d89c5c49e9d"
     },
     {
       "path": "admin/validate.js",
-      "sha256": "b7cb82b1e11017c0a295d97482405d9f583d85ca086bb965ad9e97da6efe3542"
+      "sha256": "031942994e4e970334e4edc4a3a284908589c33af9e54cb073db5c87bfe143d9"
     },
     {
       "path": "contacts/index.html",
@@ -737,7 +737,7 @@
     },
     {
       "path": "deployment-revisions.json",
-      "sha256": "ae67d8d7b981b9e78fa20efa2b4decf1b3a28fd8a744514175e9d29871073059"
+      "sha256": "1f6ab27e2398a8b45621814e5a6c6dd9dc4bc49777ccc6e8a3f2ad849e9c01c7"
     },
     {
       "path": "favicon.ico",
