@@ -3549,7 +3549,7 @@
                 {
                   "name": "items",
                   "label": "Группы",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -3812,7 +3812,7 @@
                 {
                   "name": "items",
                   "label": "Отзывы",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -3875,7 +3875,7 @@
                         {
                           "name": "items",
                           "label": "Ответ учреждения",
-                          "required": true,
+                          "required": false,
                           "widget": "list",
                           "collapsed": false,
                           "allow_add": true,
@@ -3951,7 +3951,7 @@
                 {
                   "name": "items",
                   "label": "Группы",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -4001,7 +4001,7 @@
                 {
                   "name": "items",
                   "label": "Документы",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -4061,7 +4061,7 @@
                         {
                           "name": "items",
                           "label": "Приложения",
-                          "required": true,
+                          "required": false,
                           "widget": "list",
                           "collapsed": false,
                           "allow_add": true,
@@ -4145,7 +4145,7 @@
                 {
                   "name": "items",
                   "label": "Введение об отделении",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -4178,7 +4178,7 @@
                 {
                   "name": "items",
                   "label": "Восстановление и пребывание",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -4211,7 +4211,7 @@
                 {
                   "name": "items",
                   "label": "Размещение и ОМС",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -4244,7 +4244,7 @@
                 {
                   "name": "items",
                   "label": "Мама и ребёнок",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -4277,7 +4277,7 @@
                 {
                   "name": "items",
                   "label": "Подлинные фотографии отделения",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -4319,7 +4319,7 @@
                 {
                   "name": "items",
                   "label": "Команда отделения",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -4389,7 +4389,7 @@
                 {
                   "name": "items",
                   "label": "Подтверждённые связанные страницы",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -4912,7 +4912,7 @@
                 {
                   "name": "items",
                   "label": "Подлинные фотографии и участники",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -5120,7 +5120,7 @@
                 {
                   "name": "items",
                   "label": "Подлинные материалы",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -5303,7 +5303,7 @@
                 {
                   "name": "items",
                   "label": "Подтверждённые ссылки на программы",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -5452,7 +5452,7 @@
                 {
                   "name": "items",
                   "label": "Официальные источники",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -5607,7 +5607,7 @@
                 {
                   "name": "items",
                   "label": "Официальные ссылки на услуги",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -6109,7 +6109,7 @@
                 {
                   "name": "items",
                   "label": "Подлинные фотографии с правами и согласием",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -6267,7 +6267,7 @@
                 {
                   "name": "items",
                   "label": "Консультации",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -6325,7 +6325,7 @@
                 {
                   "name": "items",
                   "label": "Специалисты",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -6402,7 +6402,7 @@
                 {
                   "name": "items",
                   "label": "Подтверждённые связи со строками прайса R32",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -6556,7 +6556,7 @@
                 {
                   "name": "items",
                   "label": "Варианты размещения",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -6614,7 +6614,7 @@
                 {
                   "name": "items",
                   "label": "Подлинные фотографии с принадлежностью палатам",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -6687,7 +6687,7 @@
                 {
                   "name": "items",
                   "label": "Цены",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -6876,7 +6876,7 @@
                 {
                   "name": "items",
                   "label": "Расписание",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -6915,7 +6915,7 @@
                 {
                   "name": "items",
                   "label": "Цены",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -7107,7 +7107,7 @@
                 {
                   "name": "items",
                   "label": "Разделы и исходные связи со строками",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -7169,7 +7169,7 @@
                 {
                   "name": "items",
                   "label": "Строки прайса",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
@@ -7255,7 +7255,7 @@
                     {
                       "name": "items",
                       "label": "Приложения",
-                      "required": true,
+                      "required": false,
                       "widget": "list",
                       "collapsed": false,
                       "allow_add": true,
@@ -7349,7 +7349,7 @@
                 {
                   "name": "items",
                   "label": "Подтверждённые соответствия страницам услуг",
-                  "required": true,
+                  "required": false,
                   "widget": "list",
                   "collapsed": false,
                   "allow_add": true,
