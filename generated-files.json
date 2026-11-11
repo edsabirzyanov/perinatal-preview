@@ -697,7 +697,7 @@
     },
     {
       "path": "contacts/index.html",
-      "sha256": "9608b536fd8b3f157bd3a83d8ef7daddab5c8180c6ed95b4d9c1bc1fe7084c67"
+      "sha256": "0b10e8f39640f40cd83b39b8aba8714213252a8aa51fa84b4a0d7a71001cd561"
     },
     {
       "path": "departments/admission/index.html",
@@ -737,7 +737,7 @@
     },
     {
       "path": "deployment-revisions.json",
-      "sha256": "1e8185de5f4bfae5e87ce45f5d3f3ae6c4c807a994f4c805e38ba59d3eb62103"
+      "sha256": "f9d8fa8a2e0cde3b695bed3b1554dac08a65e194eb3a4dba12a605baf9cb948a"
     },
     {
       "path": "favicon.ico",
@@ -753,7 +753,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "bfc3177804e1ac16d6a53fd363f060d382e617febd8f67e84811e3b8ddb441b1"
+      "sha256": "7bd199d82b02fcab9178af2f3f3081d77e8a1882e804a82f0eecc908e442183c"
     },
     {
       "path": "og-image.jpg",
