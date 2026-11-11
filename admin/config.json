@@ -7474,20 +7474,14 @@
                   "name": "main__display",
                   "label": "Основной телефон",
                   "required": false,
-                  "widget": "string"
+                  "widget": "string",
+                  "hint": "Введите номер телефона в обычном формате. Ссылка для звонка создаётся автоматически"
                 },
                 {
                   "name": "main__label",
                   "label": "Подпись телефона",
                   "required": false,
                   "widget": "string"
-                },
-                {
-                  "name": "main__href",
-                  "label": "Ссылка для звонка (tel:)",
-                  "required": false,
-                  "widget": "string",
-                  "hint": "При изменении номера обновите и эту ссылку. Например: tel:+74965393070."
                 },
                 {
                   "name": "admission__label",
@@ -7565,16 +7559,10 @@
                 },
                 {
                   "name": "display",
-                  "label": "Номер на сайте",
-                  "required": false,
-                  "widget": "string"
-                },
-                {
-                  "name": "href",
-                  "label": "Ссылка для звонка (tel:)",
+                  "label": "Телефон платных услуг",
                   "required": false,
                   "widget": "string",
-                  "hint": "При изменении номера обновите и эту ссылку. Например: tel:+74965393070."
+                  "hint": "Введите номер телефона в обычном формате. Ссылка для звонка создаётся автоматически"
                 },
                 {
                   "name": "email",
