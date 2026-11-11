@@ -19,7 +19,7 @@
       "files": [
         {
           "name": "r11-site-aligned",
-          "label": "Родовое отделение — тексты и фотографии",
+          "label": "Родовое отделение · R11",
           "file": "content/pilots/r11-site-aligned.json",
           "format": "perinatal-json",
           "fields": [
@@ -29,7 +29,7 @@
             },
             {
               "name": "introduction__lines",
-              "label": "Абзацы",
+              "label": "Об отделении",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -166,7 +166,7 @@
             },
             {
               "name": "care__lines",
-              "label": "Абзацы",
+              "label": "Медицинская помощь",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -191,7 +191,7 @@
             },
             {
               "name": "equipment__lines",
-              "label": "Абзацы",
+              "label": "Оснащение и атмосфера",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -328,7 +328,7 @@
             },
             {
               "name": "doctors__lines",
-              "label": "Абзацы",
+              "label": "Врачи родового отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -353,7 +353,7 @@
             },
             {
               "name": "midwives__lines",
-              "label": "Абзацы",
+              "label": "Акушерки родового отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -378,7 +378,7 @@
             },
             {
               "name": "phones__lines",
-              "label": "Абзацы",
+              "label": "Телефоны",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -403,7 +403,7 @@
             },
             {
               "name": "hours__lines",
-              "label": "Абзацы",
+              "label": "Передачи, выписка и беседы с родственниками",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -454,7 +454,7 @@
             },
             {
               "name": "sections__introduction__lines",
-              "label": "Абзацы",
+              "label": "О центре",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -479,7 +479,7 @@
             },
             {
               "name": "sections__birth-options__lines",
-              "label": "Абзацы",
+              "label": "Роды по ОМС и контракту",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -504,7 +504,7 @@
             },
             {
               "name": "sections__partner-birth__lines",
-              "label": "Абзацы",
+              "label": "Партнёрские роды",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -529,7 +529,7 @@
             },
             {
               "name": "sections__equipment__lines",
-              "label": "Абзацы",
+              "label": "Оснащение",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -554,7 +554,7 @@
             },
             {
               "name": "sections__intensive-care__lines",
-              "label": "Абзацы",
+              "label": "Интенсивная терапия",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -579,7 +579,7 @@
             },
             {
               "name": "sections__specialists__lines",
-              "label": "Абзацы",
+              "label": "Специалисты",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -604,7 +604,7 @@
             },
             {
               "name": "sections__family-support__lines",
-              "label": "Абзацы",
+              "label": "Поддержка семьи",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -629,7 +629,7 @@
             },
             {
               "name": "sections__conclusion__lines",
-              "label": "Абзацы",
+              "label": "Полезная информация",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -659,7 +659,7 @@
         },
         {
           "name": "r04",
-          "label": "История ПЦ",
+          "label": "История ПЦ · R04",
           "file": "content/sources/history.json",
           "format": "perinatal-json",
           "fields": [
@@ -709,7 +709,7 @@
             },
             {
               "name": "sections__introduction__lines",
-              "label": "Абзацы",
+              "label": "Об отделении",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -734,7 +734,7 @@
             },
             {
               "name": "sections__reception__lines",
-              "label": "Абзацы",
+              "label": "Кого и когда принимают",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -759,7 +759,7 @@
             },
             {
               "name": "sections__inpatient-day-care__lines",
-              "label": "Абзацы",
+              "label": "Стационары",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -784,7 +784,7 @@
             },
             {
               "name": "sections__partner__lines",
-              "label": "Абзацы",
+              "label": "Если вы с партнёром",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -809,7 +809,7 @@
             },
             {
               "name": "sections__birth-admission__lines",
-              "label": "Абзацы",
+              "label": "Оформление на роды",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -834,7 +834,7 @@
             },
             {
               "name": "sections__planned-pathology__lines",
-              "label": "Абзацы",
+              "label": "Плановая госпитализация",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -859,7 +859,7 @@
             },
             {
               "name": "sections__reminders__lines",
-              "label": "Абзацы",
+              "label": "Важно запомнить",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -899,7 +899,7 @@
             },
             {
               "name": "sections__introduction__lines",
-              "label": "Абзацы",
+              "label": "Об отделении",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -924,7 +924,7 @@
             },
             {
               "name": "sections__conditions__lines",
-              "label": "Абзацы",
+              "label": "Условия пребывания",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -949,7 +949,7 @@
             },
             {
               "name": "sections__care__lines",
-              "label": "Абзацы",
+              "label": "Медицинская помощь",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -974,7 +974,7 @@
             },
             {
               "name": "sections__team__lines",
-              "label": "Абзацы",
+              "label": "Команда отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -999,7 +999,7 @@
             },
             {
               "name": "sections__post__lines",
-              "label": "Абзацы",
+              "label": "Пост отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1024,7 +1024,7 @@
             },
             {
               "name": "sections__hours__lines",
-              "label": "Абзацы",
+              "label": "Часы посещений",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1049,7 +1049,7 @@
             },
             {
               "name": "sections__discharge__lines",
-              "label": "Абзацы",
+              "label": "Выписка",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1089,7 +1089,7 @@
             },
             {
               "name": "sections__introduction__lines",
-              "label": "Абзацы",
+              "label": "Об отделении",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1114,7 +1114,7 @@
             },
             {
               "name": "sections__functions__lines",
-              "label": "Абзацы",
+              "label": "Задачи отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1139,7 +1139,7 @@
             },
             {
               "name": "sections__diagnostics__lines",
-              "label": "Абзацы",
+              "label": "Диагностика",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1164,7 +1164,7 @@
             },
             {
               "name": "sections__breastfeeding__lines",
-              "label": "Абзацы",
+              "label": "Грудное вскармливание",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1189,7 +1189,7 @@
             },
             {
               "name": "sections__team__lines",
-              "label": "Абзацы",
+              "label": "Команда отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1214,7 +1214,7 @@
             },
             {
               "name": "sections__post__lines",
-              "label": "Абзацы",
+              "label": "Пост отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1254,7 +1254,7 @@
             },
             {
               "name": "sections__introduction__lines",
-              "label": "Абзацы",
+              "label": "Об отделении",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1279,7 +1279,7 @@
             },
             {
               "name": "sections__functions__lines",
-              "label": "Абзацы",
+              "label": "Задачи отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1304,7 +1304,7 @@
             },
             {
               "name": "sections__care__lines",
-              "label": "Абзацы",
+              "label": "Помощь и оснащение",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1329,7 +1329,7 @@
             },
             {
               "name": "sections__normative__lines",
-              "label": "Абзацы",
+              "label": "Руководитель отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1354,7 +1354,7 @@
             },
             {
               "name": "sections__team__lines",
-              "label": "Абзацы",
+              "label": "Команда и квалификация",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1379,7 +1379,7 @@
             },
             {
               "name": "sections__physicians-room__lines",
-              "label": "Абзацы",
+              "label": "Ординаторская",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1404,7 +1404,7 @@
             },
             {
               "name": "sections__post__lines",
-              "label": "Абзацы",
+              "label": "Пост отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1429,7 +1429,7 @@
             },
             {
               "name": "sections__discussion__lines",
-              "label": "Абзацы",
+              "label": "Беседы с родственниками",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1469,7 +1469,7 @@
             },
             {
               "name": "sections__introduction__lines",
-              "label": "Абзацы",
+              "label": "Об отделении",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1494,7 +1494,7 @@
             },
             {
               "name": "sections__conditions__lines",
-              "label": "Абзацы",
+              "label": "Состояния и патологии",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1519,7 +1519,7 @@
             },
             {
               "name": "sections__care__lines",
-              "label": "Абзацы",
+              "label": "Реанимационная помощь",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1544,7 +1544,7 @@
             },
             {
               "name": "sections__equipment__lines",
-              "label": "Абзацы",
+              "label": "Оснащение и наблюдение",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1569,7 +1569,7 @@
             },
             {
               "name": "sections__diagnostics__lines",
-              "label": "Абзацы",
+              "label": "Диагностика",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1594,7 +1594,7 @@
             },
             {
               "name": "sections__admission__lines",
-              "label": "Абзацы",
+              "label": "Поступление и участие родителей",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1619,7 +1619,7 @@
             },
             {
               "name": "sections__team__lines",
-              "label": "Абзацы",
+              "label": "Команда отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1644,7 +1644,7 @@
             },
             {
               "name": "sections__post__lines",
-              "label": "Абзацы",
+              "label": "Пост отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1669,7 +1669,7 @@
             },
             {
               "name": "sections__visits__lines",
-              "label": "Абзацы",
+              "label": "Посещения и беседы",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1709,7 +1709,7 @@
             },
             {
               "name": "sections__introduction__lines",
-              "label": "Абзацы",
+              "label": "Об отделении",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1734,7 +1734,7 @@
             },
             {
               "name": "sections__diagnostics__lines",
-              "label": "Абзацы",
+              "label": "Обследования и диагностика",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1759,7 +1759,7 @@
             },
             {
               "name": "sections__support__lines",
-              "label": "Абзацы",
+              "label": "Поддержка семьи",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1784,7 +1784,7 @@
             },
             {
               "name": "sections__team__lines",
-              "label": "Абзацы",
+              "label": "Команда отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1809,7 +1809,7 @@
             },
             {
               "name": "sections__physicians-room__lines",
-              "label": "Абзацы",
+              "label": "Ординаторская",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1834,7 +1834,7 @@
             },
             {
               "name": "sections__post__lines",
-              "label": "Абзацы",
+              "label": "Пост отделения",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1859,7 +1859,7 @@
             },
             {
               "name": "sections__discussion-discharge__lines",
-              "label": "Абзацы",
+              "label": "Беседы и выписка",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1899,7 +1899,7 @@
             },
             {
               "name": "sections__consultation__paragraphs",
-              "label": "Абзацы",
+              "label": "Предварительная консультация",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1916,7 +1916,7 @@
             },
             {
               "name": "sections__physiological__paragraphs",
-              "label": "Абзацы",
+              "label": "Физиологические роды — программы",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1933,7 +1933,7 @@
             },
             {
               "name": "sections__cesarean__paragraphs",
-              "label": "Абзацы",
+              "label": "Кесарево сечение — программы",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -1950,7 +1950,7 @@
             },
             {
               "name": "sections__conditions__paragraphs",
-              "label": "Абзацы",
+              "label": "Условия пребывания",
               "widget": "list",
               "collapsed": false,
               "allow_add": false,
@@ -2119,17 +2119,11 @@
               "required": true
             },
             {
-              "name": "sections__quickNavigation__cards",
-              "label": "Быстрая навигация",
-              "widget": "list",
+              "name": "editorialNarratives__hero-intro",
+              "label": "Вступление первого экрана",
+              "widget": "object",
               "collapsed": false,
-              "allow_add": false,
-              "allow_remove": false,
-              "allow_duplicate": false,
-              "allow_reorder": false,
-              "min": 4,
-              "max": 4,
-              "summary": "{{fields.title}}",
+              "required": true,
               "fields": [
                 {
                   "name": "__cmsOriginal",
@@ -2141,9 +2135,15 @@
                   "widget": "string"
                 },
                 {
-                  "name": "detail",
-                  "label": "Описание карточки",
-                  "widget": "text"
+                  "name": "paragraphs",
+                  "label": "Абзацы",
+                  "widget": "list",
+                  "field": {
+                    "name": "paragraph",
+                    "label": "Абзац",
+                    "widget": "text"
+                  },
+                  "collapsed": false
                 }
               ]
             },
@@ -2401,89 +2401,33 @@
               "required": true
             },
             {
-              "name": "sections__welcome",
-              "label": "Приветствие",
+              "name": "editorialNarratives__open-days-intro",
+              "label": "Анонс дней открытых дверей",
               "widget": "object",
               "collapsed": false,
+              "required": true,
               "fields": [
                 {
                   "name": "__cmsOriginal",
                   "widget": "hidden"
                 },
                 {
-                  "name": "heading",
+                  "name": "title",
                   "label": "Заголовок",
                   "widget": "string"
                 },
                 {
-                  "name": "name",
-                  "label": "Имя из источника",
-                  "widget": "string",
-                  "readonly": true,
-                  "required": true
-                },
-                {
-                  "name": "position",
-                  "label": "Должность из источника",
-                  "widget": "string",
-                  "readonly": true,
-                  "required": true
-                },
-                {
-                  "name": "image",
-                  "label": "Изображение",
-                  "widget": "object",
-                  "collapsed": false,
-                  "fields": [
-                    {
-                      "name": "__cmsOriginal",
-                      "widget": "hidden"
-                    },
-                    {
-                      "name": "src",
-                      "label": "Фотография",
-                      "widget": "string",
-                      "readonly": true,
-                      "required": true
-                    },
-                    {
-                      "name": "alt",
-                      "label": "Описание изображения",
-                      "widget": "string"
-                    },
-                    {
-                      "name": "replacement",
-                      "label": "Замена изображения",
-                      "widget": "object",
-                      "collapsed": false,
-                      "fields": [
-                        {
-                          "name": "__cmsOriginal",
-                          "widget": "hidden"
-                        },
-                        {
-                          "name": "src",
-                          "label": "Фотография",
-                          "widget": "image",
-                          "required": false,
-                          "media_folder": "/media/structured",
-                          "public_folder": "/media/structured",
-                          "hint": "Описание изображения заполните для посетителей с экранным диктором."
-                        },
-                        {
-                          "name": "alt",
-                          "label": "Описание изображения",
-                          "widget": "string",
-                          "required": false
-                        }
-                      ],
-                      "required": true
-                    }
-                  ],
-                  "required": true
+                  "name": "paragraphs",
+                  "label": "Абзацы",
+                  "widget": "list",
+                  "field": {
+                    "name": "paragraph",
+                    "label": "Абзац",
+                    "widget": "text"
+                  },
+                  "collapsed": false
                 }
-              ],
-              "required": true
+              ]
             },
             {
               "name": "sections__preparation",
@@ -2586,6 +2530,93 @@
                 }
               ],
               "required": true
+            },
+            {
+              "name": "editorialNarratives__pathway-now",
+              "label": "Нужно связаться сейчас",
+              "widget": "object",
+              "collapsed": false,
+              "required": true,
+              "fields": [
+                {
+                  "name": "__cmsOriginal",
+                  "widget": "hidden"
+                },
+                {
+                  "name": "title",
+                  "label": "Заголовок",
+                  "widget": "string"
+                },
+                {
+                  "name": "paragraphs",
+                  "label": "Абзацы",
+                  "widget": "list",
+                  "field": {
+                    "name": "paragraph",
+                    "label": "Абзац",
+                    "widget": "text"
+                  },
+                  "collapsed": false
+                }
+              ]
+            },
+            {
+              "name": "editorialNarratives__pathway-planned",
+              "label": "Планирую заранее",
+              "widget": "object",
+              "collapsed": false,
+              "required": true,
+              "fields": [
+                {
+                  "name": "__cmsOriginal",
+                  "widget": "hidden"
+                },
+                {
+                  "name": "title",
+                  "label": "Заголовок",
+                  "widget": "string"
+                },
+                {
+                  "name": "paragraphs",
+                  "label": "Абзацы",
+                  "widget": "list",
+                  "field": {
+                    "name": "paragraph",
+                    "label": "Абзац",
+                    "widget": "text"
+                  },
+                  "collapsed": false
+                }
+              ]
+            },
+            {
+              "name": "editorialNarratives__pathway-documents",
+              "label": "Документы для поступления",
+              "widget": "object",
+              "collapsed": false,
+              "required": true,
+              "fields": [
+                {
+                  "name": "__cmsOriginal",
+                  "widget": "hidden"
+                },
+                {
+                  "name": "title",
+                  "label": "Заголовок",
+                  "widget": "string"
+                },
+                {
+                  "name": "paragraphs",
+                  "label": "Абзацы",
+                  "widget": "list",
+                  "field": {
+                    "name": "paragraph",
+                    "label": "Абзац",
+                    "widget": "text"
+                  },
+                  "collapsed": false
+                }
+              ]
             },
             {
               "name": "sections__departments",
@@ -2781,151 +2812,6 @@
               "required": true
             },
             {
-              "name": "editorialNarratives__hero-intro",
-              "label": "Вступление первого экрана",
-              "widget": "object",
-              "collapsed": false,
-              "required": true,
-              "fields": [
-                {
-                  "name": "__cmsOriginal",
-                  "widget": "hidden"
-                },
-                {
-                  "name": "title",
-                  "label": "Заголовок",
-                  "widget": "string"
-                },
-                {
-                  "name": "paragraphs",
-                  "label": "Абзацы",
-                  "widget": "list",
-                  "field": {
-                    "name": "paragraph",
-                    "label": "Абзац",
-                    "widget": "text"
-                  },
-                  "collapsed": false
-                }
-              ]
-            },
-            {
-              "name": "editorialNarratives__open-days-intro",
-              "label": "Анонс дней открытых дверей",
-              "widget": "object",
-              "collapsed": false,
-              "required": true,
-              "fields": [
-                {
-                  "name": "__cmsOriginal",
-                  "widget": "hidden"
-                },
-                {
-                  "name": "title",
-                  "label": "Заголовок",
-                  "widget": "string"
-                },
-                {
-                  "name": "paragraphs",
-                  "label": "Абзацы",
-                  "widget": "list",
-                  "field": {
-                    "name": "paragraph",
-                    "label": "Абзац",
-                    "widget": "text"
-                  },
-                  "collapsed": false
-                }
-              ]
-            },
-            {
-              "name": "editorialNarratives__pathway-now",
-              "label": "Нужно связаться сейчас",
-              "widget": "object",
-              "collapsed": false,
-              "required": true,
-              "fields": [
-                {
-                  "name": "__cmsOriginal",
-                  "widget": "hidden"
-                },
-                {
-                  "name": "title",
-                  "label": "Заголовок",
-                  "widget": "string"
-                },
-                {
-                  "name": "paragraphs",
-                  "label": "Абзацы",
-                  "widget": "list",
-                  "field": {
-                    "name": "paragraph",
-                    "label": "Абзац",
-                    "widget": "text"
-                  },
-                  "collapsed": false
-                }
-              ]
-            },
-            {
-              "name": "editorialNarratives__pathway-planned",
-              "label": "Планирую заранее",
-              "widget": "object",
-              "collapsed": false,
-              "required": true,
-              "fields": [
-                {
-                  "name": "__cmsOriginal",
-                  "widget": "hidden"
-                },
-                {
-                  "name": "title",
-                  "label": "Заголовок",
-                  "widget": "string"
-                },
-                {
-                  "name": "paragraphs",
-                  "label": "Абзацы",
-                  "widget": "list",
-                  "field": {
-                    "name": "paragraph",
-                    "label": "Абзац",
-                    "widget": "text"
-                  },
-                  "collapsed": false
-                }
-              ]
-            },
-            {
-              "name": "editorialNarratives__pathway-documents",
-              "label": "Документы для поступления",
-              "widget": "object",
-              "collapsed": false,
-              "required": true,
-              "fields": [
-                {
-                  "name": "__cmsOriginal",
-                  "widget": "hidden"
-                },
-                {
-                  "name": "title",
-                  "label": "Заголовок",
-                  "widget": "string"
-                },
-                {
-                  "name": "paragraphs",
-                  "label": "Абзацы",
-                  "widget": "list",
-                  "field": {
-                    "name": "paragraph",
-                    "label": "Абзац",
-                    "widget": "text"
-                  },
-                  "collapsed": false
-                }
-              ]
-            },
-            {
               "name": "editorialNarratives__service-0",
               "label": "Контрактные роды",
               "widget": "object",
@@ -3042,6 +2928,91 @@
               ]
             },
             {
+              "name": "sections__welcome",
+              "label": "Приветствие",
+              "widget": "object",
+              "collapsed": false,
+              "fields": [
+                {
+                  "name": "__cmsOriginal",
+                  "widget": "hidden"
+                },
+                {
+                  "name": "heading",
+                  "label": "Заголовок",
+                  "widget": "string"
+                },
+                {
+                  "name": "name",
+                  "label": "Имя из источника",
+                  "widget": "string",
+                  "readonly": true,
+                  "required": true
+                },
+                {
+                  "name": "position",
+                  "label": "Должность из источника",
+                  "widget": "string",
+                  "readonly": true,
+                  "required": true
+                },
+                {
+                  "name": "image",
+                  "label": "Изображение",
+                  "widget": "object",
+                  "collapsed": false,
+                  "fields": [
+                    {
+                      "name": "__cmsOriginal",
+                      "widget": "hidden"
+                    },
+                    {
+                      "name": "src",
+                      "label": "Фотография",
+                      "widget": "string",
+                      "readonly": true,
+                      "required": true
+                    },
+                    {
+                      "name": "alt",
+                      "label": "Описание изображения",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "replacement",
+                      "label": "Замена изображения",
+                      "widget": "object",
+                      "collapsed": false,
+                      "fields": [
+                        {
+                          "name": "__cmsOriginal",
+                          "widget": "hidden"
+                        },
+                        {
+                          "name": "src",
+                          "label": "Фотография",
+                          "widget": "image",
+                          "required": false,
+                          "media_folder": "/media/structured",
+                          "public_folder": "/media/structured",
+                          "hint": "Описание изображения заполните для посетителей с экранным диктором."
+                        },
+                        {
+                          "name": "alt",
+                          "label": "Описание изображения",
+                          "widget": "string",
+                          "required": false
+                        }
+                      ],
+                      "required": true
+                    }
+                  ],
+                  "required": true
+                }
+              ],
+              "required": true
+            },
+            {
               "name": "editorialNarratives__about-intro",
               "label": "Описание центра",
               "widget": "object",
@@ -3067,6 +3038,35 @@
                     "widget": "text"
                   },
                   "collapsed": false
+                }
+              ]
+            },
+            {
+              "name": "sections__quickNavigation__cards",
+              "label": "Быстрая навигация",
+              "widget": "list",
+              "collapsed": false,
+              "allow_add": false,
+              "allow_remove": false,
+              "allow_duplicate": false,
+              "allow_reorder": false,
+              "min": 4,
+              "max": 4,
+              "summary": "{{fields.title}}",
+              "fields": [
+                {
+                  "name": "__cmsOriginal",
+                  "widget": "hidden"
+                },
+                {
+                  "name": "title",
+                  "label": "Заголовок",
+                  "widget": "string"
+                },
+                {
+                  "name": "detail",
+                  "label": "Описание карточки",
+                  "widget": "text"
                 }
               ]
             }
@@ -7731,6 +7731,5 @@
         }
       ]
     }
-  ],
-  "locale": "ru"
+  ]
 }
