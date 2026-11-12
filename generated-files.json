@@ -36,22 +36,6 @@
       "sha256": "ca2576a11fbf18b4238b887bc2adeacfdcffe31abf53c4fb931a99e49625beec"
     },
     {
-      "path": "_astro/botanical-reference.DW5xjz0M_1fI2Kn.webp",
-      "sha256": "eb44becfba158a87276bd39b1ef84496febcd8fc29494fa83cf3ec3d74df4f93"
-    },
-    {
-      "path": "_astro/center-entrance.DIgM76Ub_1Wz2kz.webp",
-      "sha256": "a5c0490e4a1a912aa6434c35a2366cf2d643663e05e71e3a515fff8a61b11380"
-    },
-    {
-      "path": "_astro/center-entrance.DIgM76Ub_JHveq.webp",
-      "sha256": "d4499d337ae1dad897c265974f5cb91b2f9fabe87e17ab6ea2ced197e1715f93"
-    },
-    {
-      "path": "_astro/center-entrance.DIgM76Ub_QyC0j.webp",
-      "sha256": "ac21a939aa2e553d21149b5298d18bcf96bd5e5ef914c5df3db7d8d72fec003f"
-    },
-    {
       "path": "_astro/center-entrance.DIgM76Ub_Z1fAWT1.webp",
       "sha256": "12e3ef472e83252a7d95afaabc6421404e039568101b89222c61f2b5392c1030"
     },
@@ -70,10 +54,6 @@
     {
       "path": "_astro/center-entrance.DIgM76Ub_ZFngbz.webp",
       "sha256": "c902de2a3bc47be2c1b2786c137f94429806c9f11521c7f1f01144dc6eafd106"
-    },
-    {
-      "path": "_astro/center-entrance.DIgM76Ub_ZJsL38.webp",
-      "sha256": "b1d9cc6f0877b92973c0b8f2494b0d597e764ed1b6fa94853d40a8cbb1dbc3c7"
     },
     {
       "path": "_astro/center-entrance.DIgM76Ub_ZsYv1B.webp",
@@ -152,12 +132,12 @@
       "sha256": "e9df179ea4fc9d01f1657937015fa6f052ea2c51a3907f2731c9b95ab77c4f9d"
     },
     {
-      "path": "_astro/DepartmentContent.CphAhkiN.css",
-      "sha256": "574edb082e17d6363be1871816d1142619e8351d413b8151730c19d173b97479"
+      "path": "_astro/DepartmentContent.DgIsDocf.css",
+      "sha256": "1d0cb08823bf677740c60b596abb0f69de37738781c873f41a13f05d47a8c434"
     },
     {
-      "path": "_astro/EditorialFrame.CYzJwUYf.css",
-      "sha256": "2888ff749e08395dbc105921a0e23abbc511e1fbe30220084b10e6ea0f3e17c9"
+      "path": "_astro/EditorialFrame.Bj6Zze5h.css",
+      "sha256": "389ad04824221912ebeebf3256f78cfb213475e4cde1eeba05298f77061ebfbd"
     },
     {
       "path": "_astro/equipment.Dly9mO3l_1B7RoG.webp",
@@ -216,8 +196,8 @@
       "sha256": "14a2cff3cc05b1c0766723ff47047d9aaec39aa6598dbe5c37b98bbd6bdb178c"
     },
     {
-      "path": "_astro/example-components.B4zUr7fP.css",
-      "sha256": "6cff96dc742230c032affc49f44e1de1298b6c095768d74c2fbfb7f2cc9b6deb"
+      "path": "_astro/example-components.Bg1XkCdh.css",
+      "sha256": "b0952cbec24c1a248dfb5d813fc95c3916b27f87fc42e33ccc38db6263056e56"
     },
     {
       "path": "_astro/family-support.CrZLWAsg_23x5Od.webp",
@@ -296,32 +276,32 @@
       "sha256": "4fae002389bce3461b8bdc0cefa18d235edded3d492f177e3289bb33eaa90e4d"
     },
     {
-      "path": "_astro/index.BkOdhOo_.css",
-      "sha256": "1ac17810bb3eae6137093f3631fc610cbf24ef3608a448663a3a15e6ece6e9d2"
+      "path": "_astro/index.B78vj-43.css",
+      "sha256": "f37e8f12a463daa060140d8d8afdd61d57ccf9be9a95d029dd6aaeacf4e550b8"
     },
     {
-      "path": "_astro/index.C04QuaV1.css",
-      "sha256": "ad345ff7235786c126960c8118a0c4a512d73cf7374e4b3f0c99d5363c7df2f3"
+      "path": "_astro/index.BFbjW0h6.css",
+      "sha256": "1130da01d42fc5aa24c1d70cab102eb24a2ffb88e9ec63f39fbe55d5ba12bcbb"
     },
     {
-      "path": "_astro/index.C0QivG0S.css",
-      "sha256": "d9d29baeea2f21d4db8d08249efd5f4a5cd7ad03c80f0e2995ec687d1ecfa1ba"
+      "path": "_astro/index.C5XNW1tf.css",
+      "sha256": "0f49e70b7138b10ae53b23b625e3598116fc4f965bd5c72da48ca2ce322ad427"
     },
     {
-      "path": "_astro/index.Dh7YGgzt.css",
-      "sha256": "8ad2191fb8ed4ed56ee4cad095247bfb2f87752c4facca693e64c422105f3b9d"
+      "path": "_astro/index.CVHiMQ-o.css",
+      "sha256": "e31dce47389c5c284acb920ed3b07078c14ed91ca3d7f146bbd276244278f5ab"
     },
     {
-      "path": "_astro/index.DLQFTZo0.css",
-      "sha256": "cd93416cd69f0300f8e72c945ec9c45e6bb7a86f718937bcda1a80fb8352970e"
+      "path": "_astro/index.DNGJtvTt.css",
+      "sha256": "16efeb11ffc01b168bba08cbcc185066219800d50cd1dfd7ed1f3ad784a11090"
     },
     {
-      "path": "_astro/index.DOjl_kx-.css",
-      "sha256": "5443bf734fd3ea79e6114c6922e90e8c3586f83e8be28f6dea2386b9d0f0339f"
+      "path": "_astro/index.Dp5Zij35.css",
+      "sha256": "ad21b858b1a1c7bd546efa458ed90a606b4d492aad04a285521fac4e5e69431b"
     },
     {
-      "path": "_astro/index.v4q68Zj3.css",
-      "sha256": "871450a2c35c8f42105190f59e4e6b56e620949cb2e0ffd82e4be7aeaf5ba1e9"
+      "path": "_astro/index.DY19LEwa.css",
+      "sha256": "049d82271bb757b677c697b30cc25e9e618cd45dbb0ecc03211f3757d4bb730c"
     },
     {
       "path": "_astro/introduction.B-ocMCqv_13Je5W.webp",
@@ -548,8 +528,8 @@
       "sha256": "cf60d24e06686212353f2798e0ac353300434bdfc385de57627a80e5c01d0f59"
     },
     {
-      "path": "_astro/Section.ue18bfDv.css",
-      "sha256": "ab3685a880f1664cf345e24347b6c3f59a89485299e6e1353c83529cc1f65649"
+      "path": "_astro/Section.BS7lGpuT.css",
+      "sha256": "c53277b083bd346eea6757aa16b7b2feeea0ecef87b43cc8dabcc77cef59d055"
     },
     {
       "path": "_astro/specialists.BSK3R2vF_1pxy0A.webp",
@@ -661,27 +641,27 @@
     },
     {
       "path": "404.html",
-      "sha256": "8e04f5095b5d8cacdc13256c261a9a5833c28e5cd0e5c4f7873310fad8814560"
+      "sha256": "57045b4c29bf150e2b8049384d46987203e295bb86ed00a5065defbca58e2232"
     },
     {
       "path": "about/documents/index.html",
-      "sha256": "280010748262dd1fc4c95d300a412c053e36c3a8037147ab6115ee1983acd6d3"
+      "sha256": "88ad3fab63de8f718976761661c56d14eb27ce3a885699ad04217a332deee3b2"
     },
     {
       "path": "about/gallery/index.html",
-      "sha256": "b3f6a18573e459fe5da0f890685f505f8f91b42e4a6d54dfb877156b5549ebc6"
+      "sha256": "6ed0f1fc73f3d675991f3b610baf16a52ea6e1200aebb8ae59c75408832a3051"
     },
     {
       "path": "about/history/index.html",
-      "sha256": "3a5d26e443495946aabefae9303cf203782bc56b8cd4509ae2b9c2d02af7a375"
+      "sha256": "48344358090946235aa536193058b85d543764bddf502e58c107c0794080364e"
     },
     {
       "path": "about/index.html",
-      "sha256": "41ad9a1aa831b137a90a7f85a82f088d6bca126f938168d25e6a330ed3a71dc7"
+      "sha256": "3868087f29c2a89993466895511c29a6c89ebae222998e6ab719ba788a3cde58"
     },
     {
       "path": "about/reviews/index.html",
-      "sha256": "34150e648b497a9f240324e365a4a4e2ec082ec7a430e40d8fc8fd90ab711dc5"
+      "sha256": "c456c2f8a10ba43f0a1a4f215efc20893e2899af8f71d7ae56b00bdb90d33723"
     },
     {
       "path": "admin/config.json",
@@ -697,47 +677,47 @@
     },
     {
       "path": "contacts/index.html",
-      "sha256": "0b10e8f39640f40cd83b39b8aba8714213252a8aa51fa84b4a0d7a71001cd561"
+      "sha256": "2b6ea94e7cd4fe7caaea09e26c6351337ed1ad219c1eff115670c3011bf179ff"
     },
     {
       "path": "departments/admission/index.html",
-      "sha256": "6fc136cafd8771a1468bfcc9470685df44696e5a4a214b9d8d775cfbe1446a6d"
+      "sha256": "4ad4ffd0050d4e8f3bb9c4786cb0cf87c5a82f0718ed952ebd44258e33fe5a03"
     },
     {
       "path": "departments/delivery/index.html",
-      "sha256": "883fd63fc40c54b97db5519a2291a0eefe8f7aef005cf3caa8561c5e8c39a25c"
+      "sha256": "9297d1e0fb88273c8bc428b548014b2a4c0a094d10cc4795e6c42859c74705d6"
     },
     {
       "path": "departments/index.html",
-      "sha256": "fc40f4d4f8f51e495daa1a702f339234e28cb5794e2117521d9e55353f4124e0"
+      "sha256": "a8f06d2f3ec5b95360b6fddf74c60098406fde70e0f728a6f6906d453b5f40de"
     },
     {
       "path": "departments/maternal-intensive-care/index.html",
-      "sha256": "453f0d89f5f2e37e2bc50752ea238036bcd95771640c0ba7b9252c6970dde4b7"
+      "sha256": "cd99aef58a08baee85a613be159d21329382e0b471a56c418632845d7dd90f1a"
     },
     {
       "path": "departments/neonatal-intensive-care/index.html",
-      "sha256": "7133ea1cbe5760c9df562222e27fac5bc5e255e2b3211410cacf5b950a659d0e"
+      "sha256": "719d8851a10b9d21b196b45e9961d4e96f6f43a4822534cb10cb9b41acf08093"
     },
     {
       "path": "departments/neonatal-pathology/index.html",
-      "sha256": "db9868ac4e399ce208b0d94522a836fd7c58d90acd1625e1d08820f620d1494d"
+      "sha256": "0ee51a7391689ee93f1c2360b4ce4b9d9e741b49265cfcedafe7f2cab482fd62"
     },
     {
       "path": "departments/newborn-care/index.html",
-      "sha256": "1ab572b5857bc8f0e3de897f7d3fc5336a0c58ab448a82ca96ac84ae31d0db36"
+      "sha256": "ede5fe23c5464fbcf0bbb64aaa1dfc305e7dd8bc90bc4942731ebaced7ca4b96"
     },
     {
       "path": "departments/postpartum/index.html",
-      "sha256": "7fba6bd09553a94a13ca1275034346fb865141e5550d691da1aafb7d420fce6b"
+      "sha256": "552d51a5090263793adcec91f0e87b04a034b53113fdd4ebe175a74b7a0a1475"
     },
     {
       "path": "departments/pregnancy-pathology/index.html",
-      "sha256": "6e6a1cd0f20e2206e58858f04e7ba23eef9b140194b59ca9e5318dbf9570a144"
+      "sha256": "c460fe35f093636e7cf050cb794a60b3a7304e39b5691ee4ec8959b3d40928f4"
     },
     {
       "path": "deployment-revisions.json",
-      "sha256": "fb3589cf610d3229e33b3bfe12b618d3952edd44af13990a13c013d0fc892cc5"
+      "sha256": "2ad04fd33311cce267c70a9ac849b5f10f6c0c53e95f19856f0f4db36db358bf"
     },
     {
       "path": "favicon.ico",
@@ -753,7 +733,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "7bd199d82b02fcab9178af2f3f3081d77e8a1882e804a82f0eecc908e442183c"
+      "sha256": "b7a7291ff731bd80215123aef77965364a9eaa7aaf546211e8e0a51017d69dbd"
     },
     {
       "path": "og-image.jpg",
@@ -761,67 +741,67 @@
     },
     {
       "path": "patients/admission/index.html",
-      "sha256": "f1cccf8f399e8a6cf470e762a4d541701e10575652c3f052b95765f84b39a5b0"
+      "sha256": "8dc951351e46790a365b9b24c2daca6ce73117d22c1b3e2faca939a5d7103f4f"
     },
     {
       "path": "patients/birth-preparation/index.html",
-      "sha256": "4c301247ccd609b112b1463f12dff7761186f699b5b9105eaa72432a8adcb13a"
+      "sha256": "bb0360430edfdf0d8dce56755835dd3ae90f7490ea0fc4613f47cbc603c09d26"
     },
     {
       "path": "patients/birth-registration/index.html",
-      "sha256": "4bd6419f7c33db9911f0b102fbad90e2f83453ad6b63d58582d705d162d3601a"
+      "sha256": "48292d91042d014a4dd56f67c517a9cd10f7bdd4ffff2a329dd973e52cb70c2b"
     },
     {
       "path": "patients/breastfeeding/index.html",
-      "sha256": "6f9af67f969a5bbdbbd262ab495fa7a456a419932c6f55ac2e88654fa0fd93a4"
+      "sha256": "8de0d4f768a4f393e2cc983ef1a46360aff0b7d4f0e9b753e3210bda9db20cb6"
     },
     {
       "path": "patients/doula/index.html",
-      "sha256": "6409e34b71801470e0b7f08e9f8bb36f9b4b69680934ef3be90d73d57d37277c"
+      "sha256": "dd8fdf3523c132363d058c65c5dfb4dbf3de9cab82e436ff3976ecab7720a63e"
     },
     {
       "path": "patients/hospital-bag/index.html",
-      "sha256": "31fa50bd19a929ad36c50254128bace9685f76f2ce86f75ffd7b4a42a6459e98"
+      "sha256": "7a9aa74be67a48fc6b24a7be2a463d4a2eb4d80ecb518eb6adff3492a6ea4303"
     },
     {
       "path": "patients/index.html",
-      "sha256": "cd63be98b2fe77709234dd2dfbfc433f48b694a80176b580f6fc56a859606497"
+      "sha256": "ab8d8182551841dbbd2cd09610c7ddf6de671c5f7772db566e4674a4ff02a045"
     },
     {
       "path": "patients/newborn-gift/index.html",
-      "sha256": "7c74ba1358d808697de1b85c1e35d496a3486485dba0511bf36d73cf381f3cd4"
+      "sha256": "74c7d902938fee034f5e9fcbaeb311b4cdaa8d2ae6541fc259182bbda31f2be5"
     },
     {
       "path": "patients/open-days/index.html",
-      "sha256": "0197111f6b0c3da08774156501d49974f3a8da808fc44f8b36e4512379574332"
+      "sha256": "ecf913919ece28ae9ac061f2046c604c867648d29f8825da633037db10d02c19"
     },
     {
       "path": "patients/partner-birth/index.html",
-      "sha256": "6f73ed414a59083bd6fa005f5e70a7aba55cbd2a86979f71552207b3e0c0e554"
+      "sha256": "14f784243b6f26e46ebf6245b0093fd211251b5fb5b828e5033e2800193923a9"
     },
     {
       "path": "services/birth-course/index.html",
-      "sha256": "1941a6397fa660745218b6b5db36e33dc671d14123599a54a71ae22fce42ce30"
+      "sha256": "a422ff791c62e9360d391cc8ab117df0cbaed8df0aeb57b0ccef4fc7dc521d6a"
     },
     {
       "path": "services/consultations/index.html",
-      "sha256": "62ce3911fd65f6b6a3ed4566ab9db7f57d038d41bc693d398631cefed3778554"
+      "sha256": "538f41503a44aa0a82d2b69e5643928e47c73b5a44820c57e923baa3b6b5e6b9"
     },
     {
       "path": "services/contract-birth/index.html",
-      "sha256": "bd25b89afe5e16771a7f05eee345e146e560dace3ca05675982a8996c8a09a24"
+      "sha256": "41ea8be3fa97b096ce0f37944ef3fb3fcb75079ccd8f23586ec7544cca163e13"
     },
     {
       "path": "services/family-rooms/index.html",
-      "sha256": "160c511ab17837900e9b86a8bd2cfa74c035383172f644708202a032cf26fdee"
+      "sha256": "9a97e5c1eb1f79d22999e10eca56d79fb10e78700d58f3984db85f5ecbd5d34b"
     },
     {
       "path": "services/index.html",
-      "sha256": "2f660612b70262754a76f184cd66865a0c74b52e624a5e175f29719dea0ced6d"
+      "sha256": "2b6a6c214c36e5930dfff2289826ad5b928fed715fe9d7f6e5ffa52a07d63348"
     },
     {
       "path": "services/prices/index.html",
-      "sha256": "76ae40ba0ca665baccbcf06f70ebc228c184af8f7eaed5a8085f210930ce795c"
+      "sha256": "abd26d923be8cdbe88841f2eaceecfa82ec8d1bb4b008b386b32140fd46cd081"
     }
   ]
 }
